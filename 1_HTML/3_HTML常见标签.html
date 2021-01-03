@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML常见标签</title>
+    <style>
+        a, span, b{
+            background: red;
+            width: 400px;
+            height: 200px;
+        }
+        h1, p, div{
+            background: #00f000;
+            /* width: 100%; */
+            width: auto; /* auto: 自动，这个才是默认值*/
+            /* width: 400px;
+            height: 200px; */
+        }
+    </style>
+</head>
+<body>
+    <!-- 以下标签都是行元素 -->
+    <a href="http://www.baidu.com">百度</a>
+    <span>这是一个span</span>
+    <b>这是加粗的字体</b>
+    <strong>这是一个strong</strong>
+    <em>这是一个em</em>
+    <i>这是一个i标签</i>
+
+    <!-- 以下标签都是块元素 -->
+    <h1>这是一个标题</h1>
+    <h2>这是一个标题</h2>
+    <h3>这是一个标题</h3>
+    <p>这是一个段落</p>
+    <div>这是一个区块</div>
+    <ol>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ol>
+
+    <!-- 以下标签都是表单元素 -->
+    <input type="text">
+    <input type="password">
+    <input type="radio" name="sex">男
+    <input type="radio" name="sex">女
+    <input type="checkbox" name="hobby">唱歌 <input type="checkbox" name="hobby">跳舞
+    <input type="button" value="这是一个按钮"> <button>这是另一个按钮</button>
+
+    <select name="" id="">
+        <option value="heilongjiang">黑龙江</option>
+        <option value="jilin">吉林</option>
+        <option value="liaoning">辽宁</option>
+    </select>
+
+    <textarea name="" cols="30" rows="10"></textarea>
+
+</body>
+</html>

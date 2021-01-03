@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML布局</title>
+    <style>
+        table, td{
+            border: 1px solid black; 
+            border-collapse: collapse;  
+        }
+
+        table{
+            width: 80%;
+            height: 500px;
+        }
+        #container{
+            width: 800px;
+            height: 500px;
+            border: 1px solid black;
+        }
+        #header{
+            border: 1px solid black;
+            height: 50px;
+        }
+        #sidebar{
+            width: 30%;
+            height: 450px;
+            border: 1px solid black;
+            float: left;
+        }
+        #content{
+            width: 68%;
+            border: 1px solid black;
+            height: 450px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <!-- table布局 -->
+    <!-- <table>
+        <tr height="50">
+            <td colspan="2">item 1</td>
+        </tr>
+        <tr>
+            <td width="30%">text 1</td>
+            <td>
+                text 2
+            </td>
+        </tr>
+    </table> -->
+
+    <!-- div布局 -->
+    <div id="container">
+        <div id="header">header</div>
+        <div id="sidebar">sidebar</div>
+        <div id="content">content</div>
+    </div>
+</body>
+</html>
