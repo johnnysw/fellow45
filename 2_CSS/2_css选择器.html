@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* *{
+            border: 1px solid #000000;
+        } */
+        #title{
+            background: green;
+        }
+        h1{
+            color: red;
+            background: blue;
+        }
+        li{
+            background: gray;
+        }
+        .item{
+            background: #ff0000;
+        }
+        #li1{
+            background: #00ff00;
+        }
+        #div1 h1{
+            border: 5px solid #ff0000;
+        }
+        #div1 > h1{
+            color: aqua;
+        }
+
+        input[name]{
+            background: #ff0000;
+        }
+
+        input[name="username"]{
+            background: #00ff00;
+        }
+
+        div#div2{
+            color: red;
+        }
+
+        p.item{
+            color: white;
+        }
+
+        /* a:hover{
+            color: red;
+        } */
+        #div2:hover{
+            background: #00ff00;
+        }
+
+        #div3{
+            display: none;
+        }
+
+        a:hover + #div3{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>这是一个标题</h1>
+    <h1 id="title">这是第二个标题</h1>
+
+    <ul>
+        <li>item 1</li>
+        <li id="li1" class="item">item 2</li>
+        <li class="item">item 3</li>
+    </ul>
+
+    <div id="div1">
+        <h1>这是第3个标题</h1>
+        <div>
+            <h1>这是第4个标题</h1>
+        </div>
+    </div>
+
+    <input type="text" name="username">
+    <input type="text" name="tel">
+    <input type="text">
+
+    <div id="div2">
+        div2
+    </div>
+
+    <div id="div3">
+        <p class="item">11111</p>
+        <p class="item">22222</p>
+    </div>
+
+    <a href="#">这是一个链接</a>
+
+    <div id="div3">
+        div3
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 外部样式：需要单独创建.css文件，使用Link标签引入 -->
+    
+    <style>
+        /* 内部样式：将css写在style标签中 */
+        p{
+            color: green;
+            font-size: 32px;
+        }
+
+        span{
+            background: gray;
+        }
+
+        #aa{
+            background: chocolate !important;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 内联样式：直接将css的语法写在标签的style属性中 -->
+    <h1 style="color:red;font-size:56px;">这是一个标题</h1>
+    <h1 id="aa">这是第二个标题</h1>
+
+    <p>这是一个段落</p>
+
+    <div>这是一个div</div>
+
+    <span>这是一个span</span>
+
+    <script>
+        // 使用js中的style.xxx的语法为元素添加内联样式
+        document.getElementById('aa').style.background = 'yellow';
+        document.getElementById('aa').style.color = 'red';
+    </script>
+</body>
+</html>

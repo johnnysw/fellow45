@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* ul::after{
+          content: "1111"; 
+          background: #00ff00;
+          width: 200px;
+          height: 50px; 
+        } */
+        #ul2 li{
+            float: left;
+        }
+
+        #ul2{
+            background: #00ff00;
+        }
+        #ul2 .last{
+            float: none;
+        }
+        #ul2::after{
+            content: "";
+            display: block; /*将行级元素变成块级元素*/
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ul>
+
+    <ul id="ul2">
+        <li>0001</li>
+        <li>0002</li>
+        <li>0003</li>
+        <!-- <li class="last"></li> -->
+    </ul>
+</body>
+</html>
