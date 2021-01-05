@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+
+        #menu{
+            /* height: 30px; */
+            overflow: hidden;
+        }
+        #menu li{
+            background: purple;
+            /* inline-block会产生不必要空格，另外在ie6中不支持 */
+            /* display: inline-block; */
+            float: left;
+            width: 120px;
+            height: 30px;
+            margin-right: 2px;
+        }
+        #menu li a{
+            color: #ffffff;
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-indent: 10px;
+            line-height: 30px;
+        }
+        #menu li a:hover{
+            background: orange;
+        }
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <ul id="menu">
+        <li>
+            <a href="#">Link 1</a>
+        </li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+        <li><a href="#">Link 4</a></li>
+    </ul>
+
+    <h1>这是一个主标题</h1>
+</body>
+</html>

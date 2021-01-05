@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+        }
+
+        #a {
+            background: #ff0000;
+        }
+
+        #b {
+            background: #00ff00;
+            /* 相对定位：relative */
+            /* 元素定位之后，有四个值可以设置：left、top、right、bottom */
+            /* position: relative;
+            left: 50px;
+            top: 50px; */
+            /* 绝对定位：absolue */
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+
+        #c {
+            background: #0000ff;
+        }
+
+        #outer{
+            width: 800px;
+            height: 500px;
+            background: #cccccc;
+            /* margin-left: 50px;
+            margin-top: 50px; */
+            position: relative;
+            left: 50px;
+            top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outer">
+        <div id="a">a</div>
+        <div id="b">b</div>
+        <div id="c">c</div>
+    </div>
+</body>
+
+</html>
