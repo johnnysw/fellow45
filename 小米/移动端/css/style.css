@@ -1,5 +1,35 @@
-header{
-  width: 7rem;  /*350px*/
-  height: 74px;
+.wrapper{
+  padding: 0 10px;
+}
+header {
+  height: 1.48rem;
   background: #f2f2f2;
+}
+
+header .search {
+  display: flex;
+  height: .88rem;
+  align-items: center;
+  justify-content: space-between;
+}
+header .search img.logo{
+  width: .5rem;
+  height: .32rem;
+}
+header .search input{
+  width: 5.4rem;
+  height: .66rem;
+  border: 1px solid #e5e5e5;
+  background: url(../imgs/search.png) no-repeat .1rem center;
+  background-size: .5rem;
+  text-indent: .7rem;
+  color: rgba(0, 0, 0, 0.3);
+  border-radius: .04rem;
+}
+header .search input::placeholder{
+  color: rgba(0, 0, 0, 0.3);
+}
+header .search img.user{
+  width: .4rem;
+  height: .4rem;
 }
