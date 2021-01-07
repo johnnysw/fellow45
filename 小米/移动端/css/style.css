@@ -16,12 +16,21 @@ header .search {
   align-items: center;
   justify-content: space-between;
 }
-header .search img.logo {
+header .search a.user{
+  justify-content: flex-end;
+}
+header .search a.logo img {
   width: 0.5rem;
   height: 0.32rem;
 }
+header .search a.user img {
+  width: 0.4rem;
+  height: 0.4rem;
+}
 header .search input {
   width: 5.4rem;
+  margin:0 .5rem;
+  flex: 1;
   height: 0.66rem;
   border: 1px solid #e5e5e5;
   background: #ffffff url(../imgs/search.png) no-repeat 0.1rem center;
@@ -33,10 +42,7 @@ header .search input {
 header .search input::placeholder {
   color: rgba(0, 0, 0, 0.3);
 }
-header .search img.user {
-  width: 0.4rem;
-  height: 0.4rem;
-}
+
 
 header nav .nav-list {
   display: flex;
