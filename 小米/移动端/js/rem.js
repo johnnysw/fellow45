@@ -9,8 +9,8 @@
       // document.documentElement.clientWidth 浏览器窗口文档显示区域的宽度，不包括滚动条
       var clientWidth = docEl.clientWidth;
       if (!clientWidth) return;
-      if (clientWidth > 540) {
-        clientWidth = 540;
+      if (clientWidth > 750) {
+        clientWidth = 750;
       }
       // docEl.style.fontSize = (clientWidth / 375) * 100 + 'px';
       docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';

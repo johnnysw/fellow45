@@ -1,5 +1,5 @@
 .wrapper{
-  padding: 0 10px;
+  padding: 0 .2rem;
 }
 header {
   height: 1.48rem;
@@ -30,6 +30,30 @@ header .search input::placeholder{
   color: rgba(0, 0, 0, 0.3);
 }
 header .search img.user{
+  width: .4rem;
+  height: .4rem;
+}
+
+
+
+header nav .nav-list{
+  display: flex;
+  justify-content: space-between;
+}
+header nav .nav-list a{
+  font-size: .28rem;
+  color: #747474;
+  display: block;
+  height: .56rem;
+  line-height: .56rem;
+  display: flex;
+  align-items: center;
+}
+header nav .nav-list a.active{
+  color: #ed5b00;
+  border-bottom: .04rem solid #ed5b00;
+}
+header nav .nav-list img{
   width: .4rem;
   height: .4rem;
 }
