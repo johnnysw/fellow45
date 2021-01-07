@@ -35,24 +35,25 @@ figure,
 figcaption,
 menu,
 button {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    font-size-adjust: none;
-    -webkit-text-size-adjust: 100%!important;
-    -webkit-touch-callout: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size-adjust: none;
+  -webkit-text-size-adjust: 100% !important;
+  -webkit-touch-callout: none;
 }
 body {
-    font-family: "PingFangSC-Regular","Microsoft Yahei","Helvetica Neue", Helvetica, STHeiTi, sans-serif;
-    line-height: 1.5;
-    font-size: 16px;
-    color: #000;
-    background-color: #f8f8f8;
-    -webkit-user-select: none;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: transparent;
-    outline: 0;
+  font-family: "PingFangSC-Regular", "Microsoft Yahei", "Helvetica Neue",
+    Helvetica, STHeiTi, sans-serif;
+  line-height: 1.5;
+  font-size: 16px;
+  color: #000;
+  background-color: #f8f8f8;
+  -webkit-user-select: none;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  outline: 0;
 }
 
 h1,
@@ -61,35 +62,35 @@ h3,
 h4,
 h5,
 h6 {
-
-    font-weight: normal;
+  font-weight: normal;
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 caption,
 th {
-    text-align: left;
+  text-align: left;
 }
 
 fieldset,
 img {
-    border: 0;
+  display: block;
+  border: 0;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 ins {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 del {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
 
 input,
@@ -98,34 +99,34 @@ textarea,
 select,
 optgroup,
 option {
-    font-family: inherit;
-    font-size: inherit;
-    font-style: inherit;
-    font-weight: inherit;
-    outline: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  outline: 0;
 }
 
 button {
-    -webkit-appearance: none;
-    border: 0;
-    background: none;
+  -webkit-appearance: none;
+  border: 0;
+  background: none;
 }
 
 a {
-    -webkit-touch-callout: none;
-    text-decoration: none;
+  -webkit-touch-callout: none;
+  text-decoration: none;
 }
 
 :focus {
-    outline: 0;
-    -webkit-tap-highlight-color: transparent;
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 em,
 i {
-    font-style: normal;
+  font-style: normal;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
