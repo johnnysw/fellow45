@@ -11,6 +11,9 @@ a{
 .wrapper{
   max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 header{
   background: #333333;  
@@ -21,12 +24,28 @@ header a{
 }
 .header-nav{
   height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 header .link-list{
   display:flex ;
+}
+
+nav{
+  height: 100px;
+}
+nav img{
+  width: 175px;
+}
+nav ul{
+  width: 480px;
+  display: flex;
+  justify-content: space-between;
+}
+nav ul a{
+  font-size: 18px;
+  color: #212121;
+}
+nav ul a.active{
+  color:#e94400;
 }
 
 
