@@ -92,3 +92,18 @@ main .nav-list li {
 main .nav-list li img {
   width: 100%;
 }
+
+main .news{
+  display: flex;
+  justify-content: space-between;
+  border-top: 0.16rem solid rgb(245, 245, 245);
+}
+main .news .box{
+  width: 49.7%;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+}
+main .news img{
+  width: 100%;
+}
