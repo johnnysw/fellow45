@@ -151,4 +151,28 @@ main .products .product .info-box button{
   height: .6rem;
   border-radius: .05rem;
 }
+footer{
+  width: 100%;
+  background: #f2f2f2;
+  position: fixed;
+  bottom: 0;
+}
+footer ul{
+  display: flex;
+  height: 1.04rem;
+  align-items: center;
+  justify-content: space-around;
+}
+footer ul li a{
+  font-size: .24rem;
+  color: #999999;
+}
+footer ul li a.active{
+  color: #ea625b;
+}
+footer ul li img{
+  margin: 0 auto;
+  width: .4rem;
+  margin-bottom: 2px;
+}
 
