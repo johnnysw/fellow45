@@ -1,0 +1,32 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+.wrapper{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+header{
+  background: #333333;  
+}
+header a{
+  color:#ffffff;
+  font-size: 12px;
+}
+.header-nav{
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .link-list{
+  display:flex ;
+}
+
+
