@@ -71,6 +71,7 @@ main {
   max-width: 720px;
   margin: 0 auto;
   margin-top: 1.48rem;
+  background: #ffffff;
 }
 main .craousel {
   height: 3.74rem;
@@ -107,3 +108,47 @@ main .news .box{
 main .news img{
   width: 100%;
 }
+
+
+main .products{
+  margin: .06rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+main .products .product{
+  width: 48%;
+  text-align: center;
+}
+main .products .product img{
+  width: 100%;
+}
+main .products .product .info-box{
+  padding: .2rem 0;
+}
+main .products .product .info-box .title{
+  color:rgba(0, 0, 0, 0.87);
+  font-size: .28rem;
+}
+main .products .product .info-box .info{
+  color:rgba(0, 0, 0, 0.54);
+  font-size: .24rem;
+}
+main .products .product .info-box .price .new{
+  font-size: .28rem;
+  color: #ea625b;
+}
+main .products .product .info-box .price .old{
+  font-size: .24rem;
+  color:rgba(0, 0, 0, 0.54);
+  text-decoration: line-through;
+}
+main .products .product .info-box button{
+  background-color: #ea625b;
+  color: #ffffff;
+  font-size: .24rem;
+  width: 2.08rem;
+  height: .6rem;
+  border-radius: .05rem;
+}
+
