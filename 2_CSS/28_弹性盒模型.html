@@ -1,153 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        #flex-box{
-            width: 600px;
-            height: 500px;
-            background: #cccccc;
-            /* display: flex,将元素设置成为flex容器 */
-            display: flex;
-            /* 对于flex容器，我们可以设置6个值 */
-            /* flex-direction: 用来设置主轴的方向 */
-            /* 1：row，它是默认值，表示主轴在水平方向，起点为左端 */
-            flex-direction: row;
-            /* 2: row-reverse，表示主轴在水平方向，起点为右端 */
-            /* flex-direction: row-reverse; */
-            /* 3: column，表示主轴在垂直方向，起点在上沿 */
-            /* flex-direction: column; */
-            /* 4: column，表示主轴在垂直方向，起点在下沿 */
-            /* flex-direction: column-reverse; */
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #flex-box {
+      width: 500px;
+      height: 500px;
+      background: #cccccc;
+      /* display: flex,将元素设置成为flex容器 */
+      display: flex;
+      /* 对于flex容器，我们可以设置6个值 */
+      /* flex-direction: 用来设置主轴的方向 */
+      /* 1：row，它是默认值，表示主轴在水平方向，起点为左端 */
+      flex-direction: row;
+      /* 2: row-reverse，表示主轴在水平方向，起点为右端 */
+      /* flex-direction: row-reverse; */
+      /* 3: column，表示主轴在垂直方向，起点在上沿 */
+      /* flex-direction: column; */
+      /* 4: column，表示主轴在垂直方向，起点在下沿 */
+      /* flex-direction: column-reverse; */
 
-            /* flex-wrap: 用来将flex项目换行，前提是能换行的话 */
-            /* 1. nowrap,默认值，不换行 */
-            /* flex-wrap: nowrap; */
-            /* 2. wrap，换行 */
-            /* flex-wrap: wrap; */
-            /* 3. wrap-reverse, 反方向换行 */
-            /* flex-wrap: wrap-reverse; */
+      /* flex-wrap: 用来将flex项目换行，前提是能换行的话 */
+      /* 1. nowrap,默认值，不换行 */
+      /* flex-wrap: nowrap; */
+      /* 2. wrap，换行 */
+      /* flex-wrap: wrap; */
+      /* 3. wrap-reverse, 反方向换行 */
+      /* flex-wrap: wrap-reverse; */
 
-            /* flex-flow是flex-direction与flex-wrap的复合写法 */
-            /* flex-flow: row wrap; */
+      /* flex-flow是flex-direction与flex-wrap的复合写法 */
+      /* flex-flow: row wrap; */
 
-            /* justify-content: 用来定义主轴上flex项目的对齐方式 */
-            /* 1. flex-start： 左对齐*/
-            /* justify-content: flex-start; */
-            /* 2. flex-end： 右对齐*/
-            /* justify-content: flex-end; */
-            /* 3. center：居中对齐 */
-            /* justify-content: center; */
-            /* 4. space-between: 两端对齐，项目之间的间隔相等 */
-            /* justify-content: space-between; */
-            /* 5. space-around: 每个flex项目的两侧间隔相等，项目之间的间隔会比最边缘大一倍*/
-            /* justify-content: space-around; */
-            /* 6. space-evenly: 每个flex项目的之间间隔都相等（均匀分布）*/
-            /* justify-content: space-evenly; */
+      /* justify-content: 用来定义主轴上flex项目的对齐方式 */
+      /* 1. flex-start： 左对齐*/
+      /* justify-content: flex-start; */
+      /* 2. flex-end： 右对齐*/
+      /* justify-content: flex-end; */
+      /* 3. center：居中对齐 */
+      /* justify-content: center; */
+      /* 4. space-between: 两端对齐，项目之间的间隔相等 */
+      /* justify-content: space-between; */
+      /* 5. space-around: 每个flex项目的两侧间隔相等，项目之间的间隔会比最边缘大一倍*/
+      /* justify-content: space-around; */
+      /* 6. space-evenly: 每个flex项目的之间间隔都相等（均匀分布）*/
+      /* justify-content: space-evenly; */
 
-            /* align-items: 用来定义flex项目在交叉轴方向的对齐方式 */
-            /* 1. flex-start， 在交叉轴的起点对齐*/
-            /* align-items: flex-start; */
-            /* 2. flex-end, 在交叉轴的终点对齐 */
-            /* align-items: flex-end; */
-            /* 3. center, 在交叉轴的中间对齐 */
-            /* align-items: center; */
-            /* 4. baseline, 以flex项目中第一行文本的下沿（基线）对齐 */
-            /* align-items: baseline; */
-            /* 5. stretch，默认值，拉伸 */
-            /* align-items: stretch; */
-            
-            /* align-content: 定义多根主轴在交叉轴方向上的对齐方式 */
-            /* 1. flex-start， 在交叉轴的起点对齐*/
-            /* align-content: flex-start; */
-            /* 2. flex-end, 在交叉轴的终点对齐 */
-            /* align-content: flex-end; */
-            /* 3. center, 在交叉轴的中间对齐 */
-            /* align-content: center; */
+      /* align-items: 用来定义flex项目在交叉轴方向的对齐方式 */
+      /* 1. flex-start， 在交叉轴的起点对齐*/
+      /* align-items: flex-start; */
+      /* 2. flex-end, 在交叉轴的终点对齐 */
+      /* align-items: flex-end; */
+      /* 3. center, 在交叉轴的中间对齐 */
+      /* align-items: center; */
+      /* 4. baseline, 以flex项目中第一行文本的下沿（基线）对齐 */
+      /* align-items: baseline; */
+      /* 5. stretch，默认值，拉伸 */
+      /* align-items: stretch; */
 
-        }
-        .flex-item{
-            /* width: 100px; */
-            height: 100px;
-            /* flex-grow: 用来定义flex项目的放大的比例，如果有剩余空间的话 */
-            flex-grow: 1;
-            /* flex-shrink: 用来定义flex项目的缩小的比例，如果空间有负债的话 */
-            /* flex-shrink: 1; */
-            flex-basis: 50px;
-            /* width: 50px; */
+      /* align-content: 定义多根主轴在交叉轴方向上的对齐方式 */
+      /* 1. flex-start， 在交叉轴的起点对齐*/
+      /* align-content: flex-start; */
+      /* 2. flex-end, 在交叉轴的终点对齐 */
+      /* align-content: flex-end; */
+      /* 3. center, 在交叉轴的中间对齐 */
+      /* align-content: center; */
 
-        }
-        .item1{
-            background: rgb(245, 15, 15);
-            /* 如果同时设置flex-basis和width，flex-basic优先级会比width高 */
-            /* flex-basis: 200px;
-            width: 300px; */
-            /* flex-basis并不总是width */
-            /* 当flex-direction为row是，flex-basic设置的是width */
-            /* 当flex-direction为column是，flex-basic设置的是height */
-            /* flex-basis: 200px; */
-            /* 
-                如果所有子元素的基准值之和大于剩余空间，
-                则会根据每flex项目设置的基准值，按比率伸缩剩余空间 
-            */
-            /* 
-                150*x + 80 = 92.2;
-                150*x + 60 = 72.2;
-                150*x + 50 = 62.2;
-            */
-            
-        }
-        .item2{
-            background: rgb(235, 175, 10);
-            /* height: 200px; */
-            /* font-size: 32px; */
-            /* flex-grow: 2; */
-        }
-        .item3{
-            background: rgb(140, 230, 37);
-            /* flex-shrink: 2; */
-            flex-basis: 80px;
-            /* width: 120px; */        }
-        .item4{
-            background: rgb(42, 199, 227);
-            flex-basis: 60px;
-            /* width: 150px; */        }
-        .item5{
-            background: rgb(218, 18, 178);
-        }
-        .item6{
-            background: rgb(3, 23, 240);
-        }
-        .item7{
-            background: rgb(36, 163, 110);
-        }
-        .item8{
-            background: rgb(251, 185, 3);
-        }
-        .item9{
-            background: rgb(21, 184, 6);
-            order: -1;
-            display: flex;
-        }
-    </style>
+    }
+
+    .flex-item {
+      /* width: 100px; */
+      height: 100px;
+      /* flex-grow: 用来定义flex项目的放大的比例，如果有剩余空间的话 */
+      /* flex-grow: 1; */
+      /* flex-shrink: 用来定义flex项目的缩小的比例，如果空间有负债的话 */
+      /* flex-shrink: 1; */
+      /* flex-basis: 50px; */
+      /* width: 50px; */
+
+    }
+
+    .item1 {
+      width: 150px;
+      background: rgb(245, 15, 15);
+      flex-shrink: 1;
+      /* 如果同时设置flex-basis和width，flex-basic优先级会比width高 */
+      /* flex-basis: 200px;
+          width: 300px; 
+      */
+      /* flex-basis并不总是width */
+      /* 当flex-direction为row是，flex-basic设置的是width */
+      /* 当flex-direction为column是，flex-basic设置的是height */
+      /* flex-basis: 200px; */
+      /* 
+          如果所有子元素的基准值之和大于剩余空间，
+          则会根据每flex项目设置的基准值，按比率伸缩剩余空间 
+      */
+      /* 
+          150*x + 80 = 92.2;
+          150*x + 60 = 72.2;
+          150*x + 50 = 62.2;
+      */
+
+    }
+
+    .item2 {
+      width: 200px;
+      background: rgb(235, 175, 10);
+      flex-shrink: 2;
+      /* height: 200px; */
+      /* font-size: 32px; */
+      /* flex-grow: 2; */
+    }
+
+    .item3 {
+      width: 300px;
+      background: rgb(140, 230, 37);
+      flex-shrink: 3;
+      /* flex-shrink: 2; */
+      /* flex-basis: 80px; */
+      /* width: 120px; */
+    }
+
+    .item4 {
+      background: rgb(42, 199, 227);
+      /* flex-basis: 60px; */
+      /* width: 150px; */
+    }
+
+    .item5 {
+      background: rgb(218, 18, 178);
+    }
+
+    .item6 {
+      background: rgb(3, 23, 240);
+    }
+
+    .item7 {
+      background: rgb(36, 163, 110);
+    }
+
+    .item8 {
+      background: rgb(251, 185, 3);
+    }
+
+    .item9 {
+      background: rgb(21, 184, 6);
+      order: -1;
+      display: flex;
+    }
+  </style>
 </head>
+
 <body>
-    <div id="flex-box">
-        <div class="flex-item item1">item 1item 1item 1item 1</div>
-        <div class="flex-item item2">item 2</div>
-        <div class="flex-item item3">item 3</div>
-        <div class="flex-item item4">item 4</div>
-        <div class="flex-item item5">item 5</div>
-        <div class="flex-item item6">item 6</div>
-        <div class="flex-item item7">item 7</div>
-        <div class="flex-item item8">item 8</div>
-        <div class="flex-item item9">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
+  <div id="flex-box">
+    <div class="flex-item item1">item 1</div>
+    <div class="flex-item item2">item 2</div>
+    <div class="flex-item item3">item 3</div>
+    <!-- <div class="flex-item item4">item 4</div>
+    <div class="flex-item item5">item 5</div>
+    <div class="flex-item item6">item 6</div>
+    <div class="flex-item item7">item 7</div>
+    <div class="flex-item item8">item 8</div> -->
+    <!-- <div class="flex-item item9">item 9</div> -->
+  </div>
 </body>
+
 </html>
