@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 函数：function
+
+        // 函数声明: 会函数提升
+        // fn1("lisi", 23);
+        // function fn1(name, age){ //形参
+        //     console.log(name, age);
+        //     // return "my name is " + name + ", my age is " + age; //"my name is lisi, my age is 23"
+        // }
+        // var str = fn1("lisi", 23);//实参
+
+        // 函数表达式：不会函数提升
+        // var fn1 = function(name, age){
+        //     console.log(name, age);
+        //     // return "my name is " + name + ", my age is " + age; 
+        // };
+        // fn1("lisi", 23);
+
+        // var str = fn1("lisi", 23);
+        // console.log(str);
+
+        // var a = 5; //全局作用域
+        // // 函数作用域
+        // function test()
+        // {
+        //     var a = 6; //局部变量
+        //     console.log(a);
+        // }
+        // test();
+        // console.log(a);
+        // var a = 4; 
+        // function fn1(){
+        //     // var a = 5;
+        //     function fn2(){
+        //         // var a = 6;
+        //         console.log(a);
+        //     }
+        //     fn2();
+        //     console.log(a);
+        // }
+        // fn1();
+        // console.log(a);
+
+        // function test(){
+        //     a = 5; //全局
+        //     console.log(a);
+        // }
+        // test();
+        // console.log(a);
+
+        // arguments: 参数的意思，它是函数内部使用的一个数组，用来接收所有的实参
+        // function test(name, age){
+        //     // console.log(name, age, arguments[2], arguments[3]);
+        //     console.log(arguments[0], arguments[1], arguments[2], arguments[3]);
+        //     console.log(arguments.length);
+        // }
+        // test("lisi", 23, '男', '178cm');
+
+        // 斐波那契数列：1 1 2 3 5 8
+        // 使用递归编写一个斐波那契函数，求第N项斐波那契数列的值
+        // function fib(n){
+        //     if(n <= 2){
+        //         return 1;
+        //     }
+        //     // fib(3) = fib(2) + fib(1)
+        //     return fib(n - 1) + fib(n - 2);
+        // }
+        // console.log(fib(5));
+        // 以上代码可以使用arguments.callee来简化
+        // arguments.callee就来在函数内部取代函数自己本身
+        // function fib(n) {
+        //     if (n <= 2) {
+        //         return 1;
+        //     }
+        //     return arguments.callee(n - 1) + arguments.callee(n - 2);
+        // }
+        // console.log(fib(5));
+
+        // 立即函数（函数立即执行）
+        (function(name){
+            console.log(name);
+        })("lisi")
+        
+
+    </script>
+</body>
+
+</html>

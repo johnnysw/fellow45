@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="btn">按钮</button>
+
+    <script>
+        // 函数式编程
+        // 编程范式
+        // 1. 面向过程编程
+        // 2. 面向对象编程
+        // 3. 泛型编程
+        // 4. 函数式编程
+
+        // 函数可以做为一个值赋值给一个变量
+        // var fn1 = function(){
+        //     console.log('haha');
+        // };
+
+        // var fn1 = new Function("console.log('hehe')");
+        // fn1();
+
+        // console.log(   typeof fn1   );
+
+        // function test(a) {
+        //     // var cc = function (b) {
+        //     //     return a + b;
+        //     // };
+        // 函数可以做为另一个函数的返回值
+        //     return function (b) {
+        //         return a + b;
+        //     };
+        // }
+        // test(5)
+        // var aa = test(5);
+        // var bb = aa(6);
+
+        // console.log(bb);
+
+        // 函数可以做为一个值传给另一个函数
+        // function test(a){
+        //     a(function(c){
+        //         c();
+        //     });
+        // }
+
+        // test(function(b){
+        //    b(function(){
+        //         console.log('hehe');
+        //    });
+        // });
+
+
+
+
+        // 闭包（closure）:
+        // 闭包从表现形式上看：就是外部函数里面声明了内部函数(包括参数)，
+        // 内部函数引用了外部函数中的局部变量，当外部函数执行完毕以后
+        // 该局部变量不被释放，可以留在内部中被以后引用
+        // setTimeout(function(){
+        //     console.log('haha');
+        // }, 2000);
+        // for (var i = 0; i < 3; i++) {
+        //     (function (index) {
+        //         setTimeout(function () {
+        //             console.log(index);
+        //             // index = null;
+        //         }, 1000);
+        //     })(i);
+        // }
+
+        // function test(){
+        //     var a = 5;
+        // }
+        // test();
+        // console.log(a); // a is not defined;
+
+        // function test(){
+        //     var a = 5;
+        //     function fn(){
+        //         return a + 6;
+        //     }
+        //     return fn;
+        // }
+        // var fn2 = test(); //=>fn
+
+        // console.log(  fn2()  ) ;
+
+        var btn = document.getElementById('btn');
+        btn.onclick = function(){
+            var aa = 555;
+            setTimeout(function(){
+                console.log(aa);
+            }, 1000);
+        };
+    </script>
+</body>
+
+</html>
