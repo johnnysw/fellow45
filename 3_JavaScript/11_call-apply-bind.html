@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+
+    <script>
+        // call和apply函数可以用来改变函数中的this指向
+        // var o1 = {
+        //     name: 'lisi',
+        //     age: 23
+        // };
+
+        // function test(name, age) {
+        //     // console.log(this, name, age);
+        //     console.log(this);
+        // }
+        // test('lisi', 12);
+        // test.call(o1, 'lisi', 12);
+        // test.apply(o1, ['lisi', 12]);
+
+        // bind也可以用来改变函数中的this指向，但是它不会调用，需的话可以手动调用
+        // test.bind(o1)();
+        
+
+        var btn = document.getElementById('btn');
+        btn.onclick = function () {
+            // this => btn
+            var fn = function(){
+                console.log(this);
+            };
+            setTimeout(fn.bind(btn), 1000);
+        }
+    </script>
+</body>
+</html>

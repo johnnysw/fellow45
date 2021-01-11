@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">按钮</button>
+    <script>
+        // 
+        // 创建对象的方式
+        // 1. new Object
+        // var o1 = new Object();
+        // o1.name = 'lisi';
+        // o1.age = 23;
+        // o1.sayHello = function(){
+        //     console.log('hi...');
+        // };
+
+        // 2. {}对象直接量
+        // var o1 = {
+        //     name: 'lisi',
+        //     age: 23,
+        //     sayHello: function(){
+        //         console.log('hi...');
+        //     }
+        // };
+
+        // o1.name = 'wangwu';
+        // console.log(o1.name);
+        // o1.sayHello();
+
+        // 3. new 构造函数()
+        // es6中的创建类的语法
+        // class Cat{
+        //     name = "mimi";
+        //     age = 0;
+
+        //     constructor(name, age){
+        //         this.name = name;
+        //         this.age = age;
+        //     }
+
+        //     eat(){
+
+        //     }
+        //     sleep(){
+
+        //     }
+        // }
+
+        // 创建具体的实例对象
+        // var cat1 = new Cat("xiaohua", 4);
+
+        // console.log(cat1.name, cat1.age);
+
+        // 点表示法与括号表示法
+
+        // var o1 = {
+        //     name: 'lisi',
+        //     age: 23
+        // };
+
+        // console.log(   o1.name   ); //使用.运算符，不允许使用变量
+        // console.log(   o1["name"]   ); //使用[]运算符，可以使用变量
+
+        // var aa = "name";
+        // console.log(  o1[aa]  );  
+
+        // 属性与方法的一些细节的知识点
+
+        // var person = {
+        //     name: 'lisi',
+        //     age: 23,
+        //     brother: {
+        //         name: 'lixx',
+        //         age: 34,
+        //         wife: {
+        //             name: 'zhangyy',
+        //             age: 18
+        //         }
+        //     },
+        //     sayHello: function () {
+        //         // this: 指向当前对象
+        //         console.log(this.name, this.age);
+        //     }
+        // };
+
+        // console.log(person.brother.wife.name);
+        // person.sayHello();
+
+        // this
+        var o1 = {
+            name: 'lisi',
+            age: 23,
+            sayHello: function () {
+                // this: 指向当前对象
+                // console.log(  this  );
+                setTimeout(function () {
+                    console.log(this);
+                }, 1000);
+            }
+        };
+
+        // o1.sayHello();
+
+        // function test() {
+        //     console.log(this);//window
+        // }
+        // window.test();
+
+        // var aaa = 5;
+
+        // console.log(window.aaa);
+
+        // setTimeout(function() {
+        //     console.log(this);
+        // }, 1000);
+
+        // alert('haha');
+
+        var btn = document.getElementById('btn');
+        btn.onclick = function () {
+            // console.log(this);
+            var that = this;
+            setTimeout(function () {
+                console.log(that);
+            }, 1000);
+        }
+
+
+
+    </script>
+</body>
+
+</html>

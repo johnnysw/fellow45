@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            人到图书馆借书
+
+            人
+                属性：姓名、身份证号
+                方法：
+            书
+                属性：书名、ISBN
+                方法：
+            图书馆
+                属性：馆名、地址
+                方法：
+            管理员
+                属性：
+                方法：登记
+        */
+    //    var person = {
+    //        name: 'lisi',
+    //        idCard: '1234567890'
+    //    };
+
+    //    var book = {
+    //        name: '大学英语四级',
+    //        ISBN: '987654'
+    //    };
+
+    //    var library = {
+    //        name: '学府书店',
+    //        address: '学府路'
+    //    };
+
+    //    var manager = {
+    //        regist: function(person, book, library){
+    //            console.log('借书人：' + person.name + ', 书名：' + book.name + ', 图书馆：' + library.name);
+    //        }
+    //    }
+
+    //    manager.regist(person, book, library);
+
+    /* 
+        面向对象版贪吃蛇
+
+        蛇
+            属性：长度、速度、方向
+            方法：吃、移动
+
+        食物
+            属性：位置
+            方法：
+
+        地图（草场）
+            属性：
+            方法：生成食物
+
+        游戏：
+            属性：
+            方法：开始、结束、设置。。。
+    */
+
+    var ground = {
+        init(){
+            // 在这里对地图进行初始化
+        },
+        createFood(){
+            
+        }
+    };
+    var snake = {
+        length: 3,
+        speed: 1,
+        direction: 'right',
+        init(){
+            // 在这里对蛇进行初始化
+        },
+        eat(){
+
+        },
+        move(){
+
+        }
+    };
+    var food = {
+        pos: {
+            left: 0,
+            top: 0
+        },
+        init(){
+            // 在这里对食物进行初始化
+        }
+    };
+
+    var game = {
+        init(){
+            ground.init();
+            snake.init();
+            food.init();
+        },
+        start(){
+            snake.move();
+        },
+        stop(){
+
+        },
+        set(){
+
+        }
+    };
+
+    game.init();//游戏初始化
+    game.start();//开始游戏
+    </script>
+</body>
+</html>
