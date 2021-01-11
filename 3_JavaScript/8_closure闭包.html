@@ -93,13 +93,53 @@
 
         // console.log(  fn2()  ) ;
 
-        var btn = document.getElementById('btn');
-        btn.onclick = function(){
-            var aa = 555;
-            setTimeout(function(){
-                console.log(aa);
-            }, 1000);
-        };
+        // var btn = document.getElementById('btn');
+        // btn.onclick = function(){
+        //     var aa = 555;
+        //     setTimeout(function(){
+        //         console.log(aa);
+        //     }, 1000);
+        // };
+
+        // 再一次介绍函数式编程和闭包
+        // var fn = function () {
+
+        // };
+
+        // function test() {
+        //     return function () {
+
+        //     };
+        // }
+
+        // function test2(a) {
+
+        // }
+
+        // test2(function () {
+
+        // });
+
+        // function test() {
+        //     var a = 5;
+        //     function fn() {
+        //         var c = a + 6;
+        //         return c;
+        //     }
+        //     return fn;
+        // }
+
+        // var fn2 = test();
+        // console.log(fn2());
+
+        for (var i = 0; i < 3; i++) {
+            (function (index) {
+                setTimeout(function () {
+                    console.log(index);
+                }, 1000);
+            })(i);
+        }
+
     </script>
 </body>
 
