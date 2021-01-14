@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // window.onload表示当页面加载完毕之后再回来执行其中的代码
+        window.onload = function () {
+            // var oDiv1 = document.querySelector('#div1');
+            // var oDiv2 = document.querySelector('#div2');
+            // oDiv2.onclick = function () {
+            //     // oDiv2.style.backgroundColor = 'red';
+            //     // oDiv2.style.width = '300px';
+            // };
+
+        };
+    </script>
+    <style>
+        #div2 {
+            width: 200px;
+            height: 100px;
+            background-color: #cccccc;
+        }
+        .aa{
+            width: 300px;
+            background: #ff0000;
+        }
+        #div1{
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- <div id="div2" class="aa bb"></div> -->
+
+    <div id="div1">
+        <a href="">这是链接</a> 
+        <h1 id="title">这是标题</h1>
+    </div>
+
+    <div id="div2">
+        
+    </div>
+
+    <script>
+        // var oDiv2 = document.querySelector('#div2');
+        // oDiv2.onclick = function () {
+        //     // oDiv2.style.backgroundColor = 'red';
+        //     // oDiv2.style.width = '300px';
+        //     // oDiv2.className = 'aa';
+        //     oDiv2.classList.add('cc');
+        //     oDiv2.classList.remove('bb');
+        //     console.log(oDiv2.classList);
+        // };
+
+        var oDiv1 = document.querySelector('#div1');
+        var oH1 = document.querySelector('#title');
+        // 1. children: 找到当前元素的所有的子代元素节点
+        // childNodes: 找到当前元素下面的所有的子代元素节点，包含文档节点
+        // console.log(  oDiv1.firstChild  );
+        // console.log(  oDiv1.firstElementChild  );
+        // Cannot set property 'background' of undefined
+        // console.log(oDiv1.firstChild.style);
+        // oDiv1.firstChild.style.background = "red";
+
+        // console.log(oH1.nextSibling.style.background="red");
+        // console.log(oH1.nextElementSibling);
+
+        /**
+         * 返回elem的下一个元素兄弟
+         */
+        function next(elem){
+            // 循环调用elem.nextSibling找下一个兄弟元素
+            do{
+                elem = elem.nextSibling;
+            }while(elem && elem.nodeType != 1);
+            return elem;
+        }
+
+        function first(elem){
+            elem = elem.firstChild;
+            return elem && elem.nodeType == 1 ? elem : next(text);
+        }
+
+        // var oA = first(oDiv1);
+        // oA.style.background = 'red';
+
+        // Cannot read property 'nodeType' of null
+        // Cannot read property 'style' of null
+        // var oP = next(oH1);
+        // console.log(oP);
+        // if(oP){
+        //     oP.style.background = 'red';
+        // }
+
+        // parentNode: 找父元素
+        // console.log(  oH1.parentNode  );
+        // offsetParent: 最近的已定位的父元素
+        // console.log( oH1.offsetParent  );
+
+        // innerHTML
+        // oH1.innerHTML = "<span>hehe</span>";
+        // oH1.innerText = "<span>hehe</span>";
+
+        // var oDiv2 = document.querySelector('#div2');
+
+        // oDiv2.innerHTML = "<p>ppppp</p><h1>h1h11hh1</h1>";
+
+        // var oP = document.createElement('p');
+        // var pText = document.createTextNode('pppppp');
+        // oP.appendChild(pText);
+
+        // var oH1 = document.createElement('h1');
+        // var h1Text = document.createTextNode('h1h1h1h1');
+        // oH1.appendChild(h1Text);
+
+        // oDiv2.appendChild(oP);
+        // oDiv2.appendChild(oH1);
+
+    </script>
+
+</body>
+
+</html>

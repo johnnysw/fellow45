@@ -1,0 +1,37 @@
+<script>
+
+    // var now;
+
+    // now.getFullYear(); // Cannot read property 'getFullYear' of undefined|null
+
+    /*
+        of: 谁谁的
+
+        name of person: 人的名字
+
+        getFullYear of undefined: undefined的getFullYear
+
+        var person = {
+            name: 'lisi'
+        };
+
+        person.name => 人的名字
+        undefined.getFullYear() => now.getFullYear();
+
+
+
+    */
+
+    var i, fac = 1;
+    function fact(n){
+        for(i=1; i<=n; i++){
+            fac *= i;
+        }
+        return fac;
+    }
+
+    console.log(fact(12) - fact(10));
+
+    
+
+</script>

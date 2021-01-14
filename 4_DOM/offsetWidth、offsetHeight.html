@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 300px;
+            height: 100px;
+            background: #ff0000;
+            /* padding: 20px;
+            border: 2px solid #000000;
+            margin: 30px;
+            overflow: scroll; */
+            /* margin-left: 100px;
+            margin-top: 100px; */
+            /* position: relative;
+            left: 100px;
+            top: 100px; */
+        }
+
+        #outer{
+            width: 500px;
+            height: 500px;
+            background: #cccccc;
+            /* position: relative;
+            left: 50px;
+            top: 50px; */
+            margin-left: 50px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <div id="div1"></div>
+    </div>
+    <script>
+        var oDiv1 = document.querySelector('#div1');
+        // oDiv1.style.width = "300px";
+        // offsetWidth和offsetHeight是只读的，不能赋值，包含：border + padding + content
+        // oDiv1.offsetWidth = 300;
+        // console.log(   oDiv1.style.width   ); //""
+        // console.log(   getComputedStyle(oDiv1, null).width   );
+        console.log(  oDiv1.currentStyle.width  );
+        // console.log(oDiv1.offsetWidth);
+        // console.log(oDiv1.clientWidth);
+        // console.log(oDiv1.scrollWidth);
+        // console.log(   oDiv1.style.height   ); 
+        // console.log(oDiv1.offsetHeight);
+
+        // console.log(  oDiv1.offsetLeft, oDiv1.offsetTop   );
+    </script>
+</body>
+</html>

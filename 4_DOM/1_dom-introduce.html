@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <div id="div1">div1</div>
+    
+    <script>
+        var btn = document.getElementById('btn');
+        btn.onclick = function(){
+            console.log('haha');
+        };
+
+        var div1 = document.getElementById('div1');
+        div1.onclick = function(){
+            div1.style.width = '200px';
+            div1.style.height = '200px';
+            div1.style.background = 'red';
+        };
+    </script>
+</body>
+</html>

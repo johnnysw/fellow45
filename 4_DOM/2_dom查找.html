@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <div id="div1">
+        <button id="btn1">按钮</button>
+    </div>
+
+    <ul id="ul1">
+        <li>item 1</li>
+        <li class="aa bb">item 2</li>
+        <li class="aa">item 3</li>
+    </ul>
+
+    <div class="aa">div1</div>
+    <div class="aa">div2</div>
+
+    <script>
+        // dom查找
+        // 1. getElementById
+        // var oBtn = document.getElementById("btn1");
+
+        // 2. getElementsByTagName
+        // aLi是一个类数组，而非真正的数组
+        // var aLi = document.getElementsByTagName('li');
+        // aLi.push('haha');//类数组中没有普通数组中的方法
+        // console.log( aLi[0] );
+
+        // 3. getElementsByClassName
+        // var aLi = document.getElementsByClassName("aa");
+        // for(var i=0; i<aLi.length; i++){
+        //     aLi[i].style.background = 'red';
+        // }
+
+        // 封装getByClass解决getElementsByClassName在IE8-的兼容性问题
+        /**
+         * @param className 要搜索的类名
+         * @param tagName 限定搜索的标签名
+         * @param context 限定搜索的上下文（范围）
+         */
+        /* function getByClass(className, tagName, context) {
+            var result = []; //用来存放找到的元素
+            context = context || document;
+            // context = context == undefined ? document : context;
+            // 判断当前浏览器是否支持getElementsByClassName，如果支持直接使用它
+            // 只判断当前浏览器是否支持getElementsByClassName，不需要关心是什么浏览器以及它是什么版本
+            if (context.getElementsByClassName) {
+                return context.getElementsByClassName(className);
+            } else {
+                // 自写代码处理上面不支持的情况
+                var arr = context.getElementsByTagName(tagName);
+                for (var i = 0; i < arr.length; i++) {
+                    // 过滤出所有元素的class属性的值等于传过来的className
+                    // arr[i].className => "aabb" == "aa"
+                    if (arr[i].className.indexOf(className) != -1) { //TODO: 未来要使用正则来完善
+                        result.push(arr[i]);
+                    }
+                }
+            }
+            return result;
+        } */
+
+        /* var oUl1 = document.getElementById('ul1');
+        var aLi = getByClass('aa', 'li', oUl1);
+        for (var i = 0; i < aLi.length; i++) {
+            aLi[i].style.background = 'green';
+        } */
+
+        // var oDiv1 = document.getElementById('div1');
+        // oDiv1.getElementById('btn1');//语法错误
+        // oDiv1.getElementsByTagName('h1')
+        // oDiv1.getElementsByClassName('aa');
+
+        // 4. querySelector和querySelectorAll()
+
+        var oBtn1 = document.querySelector('#btn1');
+        oBtn1.onclick = function(){
+            console.log('haha');
+        };
+
+        // var oUl1 = document.querySelector('#ul1');
+        // var aLi = oUl1.querySelectorAll('.aa');
+        var aLi = document.querySelectorAll('#ul1 .aa');
+        for (var i = 0; i < aLi.length; i++) {
+            aLi[i].style.background = 'green';
+        } 
+
+
+    </script>
+</body>
+
+</html>

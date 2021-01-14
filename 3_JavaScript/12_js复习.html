@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">按钮</button>
+    <script>
+        // function test() {
+
+        // }
+
+        // console.log( test() );
+
+        // var arr = [];  //new Array();
+
+        // console.log(arr[0]);
+
+        // var obj = {};
+
+        // console.log(obj.name);
+
+        // var btn = document.getElementById('btn');
+
+        // console.log(btn);
+
+        // null 可以被解释为对一个空对象的引用
+
+        // console.log(obj); // Object
+
+        // console.log(  typeof obj  );
+
+        // class Person{
+
+        // }
+
+        // class Cat{
+
+        // }
+
+        // var p1 = new Person();
+
+        // console.log(  p1 instanceof Cat   );
+
+        // console.log(   arr instanceof Object   );
+        // var a = 5;
+        // function test(){
+        //     var a = 6;
+        // }
+        // test();
+        // console.log(a); //=>5
+
+        // 词法作用域：函数是在声明或定义它的作用域中执行，而不是在运行它的作用域中执行
+
+        // var value = 1;
+
+        // function foo(){
+        //     console.log(value); //=>1
+        // }
+
+        // function bar(){
+        //     var value = 2;
+        //     foo();
+        // }
+
+        // bar();
+
+        // window是客户端js的全局对象
+        // this永远指向『当前对象』
+
+        // var obj = {
+        //     name: 'lisi',
+        //     sayHello: function () {
+        //         console.log(this);
+        //     }
+        // };
+
+        // var btn = document.getElementById('btn'); //DOM对象
+        // btn.onclick = function () {
+        //     function fn() {
+        //         console.log(this);
+        //     }
+        //     setTimeout(fn, 1000);
+        // };
+
+        function test(name, age){
+            console.log(this, name, age);
+        }
+
+        var obj = {
+            name: 'lisi', 
+            age: 23
+        };
+        // test();
+        // test.call(obj, 'lisi', 23);
+        // test.apply(obj, ['lisi', 23]);
+
+        var fn = test.bind(obj);
+
+        fn('lisi', 23);
+
+
+
+    </script>
+</body>
+
+</html>

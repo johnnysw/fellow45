@@ -1,0 +1,12 @@
+<users>
+
+    <user id="11">
+        <name>lisi</user>
+        <age>23</age>
+    </user>
+    <user id="22">
+        <name>wangwu</user>
+        <age>34</age>
+    </user>
+
+</users>
