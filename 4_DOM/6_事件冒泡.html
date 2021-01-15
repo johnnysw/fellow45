@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #a{
+            width: 300px;
+            height: 300px;
+            background: #ff0000;
+        }
+        #b{
+            width: 200px;
+            height: 200px;
+            background: #00ff00;
+        }
+        #c{
+            width: 100px;
+            height: 100px;
+            background: #0000ff;
+        }
+    </style>
+</head>
+<body>
+    <div id="a">
+        a
+        <div id="b">
+            b
+            <div id="c">
+                c
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var oA = document.getElementById('a');
+        var oB = document.getElementById('b');
+        var oC = document.getElementById('c');
+
+        oA.onclick = function(){
+            console.log('a clicked.');
+        };
+        oB.onclick = function(event){
+            event = event || window.event;
+            console.log('b clicked.');
+            event.stopPropagation();
+            event.cancelBubble = true;
+        };
+        oC.onclick = function(){
+            console.log('c clicked.');
+        };
+    </script>
+</body>
+</html>

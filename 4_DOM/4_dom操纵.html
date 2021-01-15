@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn-add">添加</button>
+    <button id="btn-remove">删除</button>
+    <button id="btn-replace">替换</button>
+    <button id="btn-insert">插入</button>
+    <button id="btn-clone">clone</button>
+
+    <ul id="ul1">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>
+            item 3
+            <a href="#">这是链接</a>
+        </li>
+    </ul>
+
+    <button id="btn1" class="aa" cc="dd">属性演示</button>
+
+    <script>
+        var oUl1 = document.querySelector('#ul1');
+        var aLi = oUl1.getElementsByTagName('li');
+        var oBtnAdd = document.querySelector('#btn-add');
+        var oBtnRemove = document.querySelector('#btn-remove');
+        var oBtnReplace = document.querySelector('#btn-replace');
+        var oBtnInsert = document.querySelector('#btn-insert');
+        var oBtnClone = document.querySelector('#btn-clone');
+
+        oBtnAdd.onclick = function () {
+            var oLi = document.createElement('li');
+            oLi.innerHTML = 'haha';
+            oUl1.appendChild(oLi);
+        };
+        oBtnRemove.onclick = function(){
+            oUl1.removeChild(  oUl1.lastElementChild  );
+        };
+        oBtnReplace.onclick = function(){
+            var oNewLi = document.createElement('li');
+            oNewLi.innerHTML = Math.random();
+            oUl1.replaceChild(oNewLi, oUl1.firstElementChild);
+        };
+        oBtnInsert.onclick = function(){
+            var oNewLi = document.createElement('li');
+            oNewLi.innerHTML = Math.random();
+            oUl1.insertBefore(oNewLi, oUl1.children[1]);
+        };
+        oBtnClone.onclick = function(){
+            var oCloneNode = oUl1.lastElementChild.cloneNode(true);
+            oUl1.appendChild(oCloneNode);
+        };
+
+        var oBtn1 = document.querySelector('#btn1');
+        oBtn1.onclick = function(){
+            // oBtn1.id = 'aa';
+            // console.log(oBtn1.id);
+            // oBtn1.setAttribute('id', 'bb');
+            // console.log(   oBtn1.getAttribute('id')  );
+
+            // 自定义属性
+            // this.cc = 'ee';
+            // console.log(  this.cc  );
+            this.setAttribute('cc', 'ee');
+            this.setAttribute('ff', 'gg');
+            console.log(this.getAttribute('cc'));
+        };
+
+
+    </script>
+</body>
+
+</html>

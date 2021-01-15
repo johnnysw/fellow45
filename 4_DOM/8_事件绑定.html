@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 2000px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">点我</button>
+
+    <script>
+        var oBtn1 = document.querySelector('#btn1');
+        // oBtn1.onclick = function(){
+        //     console.log('haha');
+        //     console.log('hehe');
+        // };
+        // oBtn1.onclick = function(){
+        //     console.log('hehe');
+        // };
+        // oBtn1.onclick = null;
+
+        var fn = function(){
+            console.log("haha");
+        };
+
+        oBtn1.addEventListener('click', fn, false);
+
+        oBtn1.removeEventListener('click', fn, false);
+        // oBtn1.addEventListener('click', function(){
+        //     console.log('hehe');
+        // }, false);
+
+        // oBtn1.attachEvent('onclick', function(){
+        //     console.log(this);
+        // });
+        // oBtn1.attachEvent('onclick', function(){
+        //     console.log('hehe');
+        // });
+
+        // window.onscroll = function(){
+        //     console.log('haha');
+        // };
+
+        // window.onscroll = function(){
+        //     console.log(Math.random());
+        // };
+
+        // window.addEventListener('scroll', function(){
+        //     console.log('haha');
+        // }, false);
+        // window.addEventListener('scroll', function(){
+        //     console.log(Math.random());
+        // }, false);
+
+ 
+    </script>
+</body>
+</html>

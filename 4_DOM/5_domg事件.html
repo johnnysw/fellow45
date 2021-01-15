@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 100px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">按钮</button>
+    <div id="div1"></div>
+
+    <input type="text" id="search">
+
+    <a href="http://www.baidu.com" id="goToBaidu">去百度</a>
+
+    <script>
+        // 事件源
+        // 事件处理函数
+        // 事件
+        var oBtn1 = document.querySelector('#btn1');
+        var oDiv1 = document.querySelector('#div1');
+        var oSearch = document.querySelector('#search');
+        // 给btn绑定事件（注册事件）
+        // oBtn1.onclick = function(e){
+        //     //e
+        // };
+        // oBtn1.ondblclick = function(){
+        //     console.log('haha');
+        // };
+        // oDiv1.onmouseover = function(){
+        //     console.log('over', Math.random());
+        // };
+        // oDiv1.onmouseout = function(){
+        //     console.log('out', Math.random());
+        // };
+        // oDiv1.onmousemove = function(){
+        //     console.log('move', Math.random());
+        // };
+        // oDiv1.onmousedown = function(){
+        //     console.log('down', Math.random());
+        // };
+        // oDiv1.onmouseup = function(){
+        //     console.log('up', Math.random());
+        // };
+
+        /* oDiv1.onclick = function(){
+            console.log('click', Math.random());
+        }; */
+
+        // document.onkeydown = function(){
+        //     console.log('down', Math.random());
+        // };
+        // document.onkeyup = function(){
+        //     console.log('up', Math.random());
+        // };
+        // document.onkeypress = function(){
+        //     console.log('press', Math.random());
+        // };
+
+        // oSearch.onkeydown = function(){
+        //     console.log(   this.value   );
+        // };
+
+        // oSearch.onkeyup = function(){
+        //     console.log(   this.value   );
+        // };
+
+        oDiv1.onclick = function(event){
+            // console.log(event.clientX, event.clientY);
+            console.log(event.target);
+        };
+
+        document.onkeydown = function(event){
+            console.log(event.keyCode);
+        };
+
+        var oBtn = document.getElementById('goToBaidu');
+        oBtn.onclick = function(event){
+            event = event || window.event;
+            event.preventDefault();
+            event.returnValue = false;
+        };
+
+
+    </script>
+</body>
+</html>

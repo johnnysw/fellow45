@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn-add">添加</button>
+    <ul id="ul1">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ul>
+
+    <script>
+        // var fn = function () {
+        //     console.log(this.innerHTML);
+        // };
+
+        // var aLi = document.querySelectorAll('#ul1 li');
+        // for (var i = 0; i < aLi.length; i++) {
+        //     aLi[i].onclick = fn;
+        // }
+
+        var oUl1 = document.querySelector('#ul1');
+        var oBtnAdd = document.querySelector('#btn-add');
+        oBtnAdd.onclick = function () {
+            var oLi = document.createElement('li');
+            oLi.innerHTML = Math.random();
+            // oLi.onclick = fn;
+            oUl1.appendChild(oLi);
+        };
+
+        // 利用事件冒泡解决后生成元素的事件绑定问题
+        // var oUl1 = document.querySelector('#ul1');
+        oUl1.onclick = function(event){
+            event = event || window.event;
+            target = event.target || event.srcElement;
+            if(target.tagName == 'LI'){
+                console.log(target.innerHTML);
+            }
+        };
+    </script>
+</body>
+
+</html>

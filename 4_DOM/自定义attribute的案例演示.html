@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tbl1, #tbl1 td, #tbl1, th{
+            border: 1px solid #000000;
+        }
+        #tbl1{
+            border-collapse: collapse;
+            width: 60%;
+        }
+    </style>
+</head>
+<body>
+    <table id="tbl1">
+        <tr>
+            <th>id</th>
+            <th>姓名</th>
+            <th>操作</th>
+        </tr>
+        <tr>
+            <td>111</td>
+            <td>lisi</td>
+            <td><button class="btn-del" userId="111">删除</button></td>
+        </tr>
+        <tr>
+            <td>222</td>
+            <td>wangwu</td>
+            <td><button class="btn-del" userId="222">删除</button></td>
+        </tr>
+        <tr>
+            <td>333</td>
+            <td>zhaoliu</td>
+            <td>
+                <button class="btn-del" userId="333">删除</button>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        // var oTbl1 = document.querySelector('#tbl1');
+        // var aBtnDel = oTbl1.getElementsByClassName('btn-del');
+
+        var aBtnDel = document.querySelectorAll('#tbl1 .btn-del');
+        for(var i=0; i<aBtnDel.length; i++){
+            aBtnDel[i].onclick = function(){
+                //找和自己在同一tr中第一个td中的文本
+                // Cannot read property 'parentNode' of undefined
+                // console.log(  aBtnDel[i]  ); //undefined
+                // console.log(this.parentNode.parentNode.firstElementChild.innerHTML);
+                console.log(  this.getAttribute('userid')  );
+            };
+        }
+    </script>
+</body>
+</html>

@@ -1,13 +1,28 @@
-<script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 100px;
+            background: #cccccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <script>
+        var oDiv1 = document.getElementById('div1');
+        // oDiv1.style.background = '#ff0000';
+        // console.log(oDiv1.style.background);
 
-    var obj = {
-        name: 'lisi'
-    };
+        // console.log(   getComputedStyle(oDiv1, null).width   ); //标准浏览器
+        // console.log(    oDiv1.currentStyle.width  ); //IE
 
-    console.log(obj.age);
 
-    if(  document.getElementsByClassName  ){
-        console.log('yes');
-    }
-
-</script>
+    </script>
+</body>
+</html>
