@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    #container {
+      width: 750px;
+      margin: 50px auto;
+      position: relative;
+    }
+
+    #img-box>img {
+      display: none;
+    }
+
+    #img-box>img.active {
+      display: block;
+    }
+
+    #tab {
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      right: 50px;
+      bottom: 30px;
+      width: 140px;
+    }
+
+    #tab>li {
+      width: 25px;
+      height: 25px;
+      text-align: center;
+      line-height: 25px;
+      background: rgba(0, 0, 0, 0.5);
+      color: #ffffff;
+    }
+
+    #tab>li.active {
+      background: rgba(255, 0, 0, 0.8);
+    }
+
+    #container .btn {
+      width: 50px;
+      height: 80px;
+      background: rgba(0, 0, 0, 0.5);
+      color: #ffffff;
+      position: absolute;
+      font-size: 50px;
+      text-align: center;
+      top: 50%;
+      margin-top: -40px;
+    }
+
+    #prev {
+      left: 0;
+    }
+
+    #next {
+      right: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div id="img-box">
+      <img src="imgs/1.jpg" alt="" class="active">
+      <img src="imgs/2.jpg" alt="">
+      <img src="imgs/3.jpg" alt="">
+      <img src="imgs/4.jpg" alt="">
+      <img src="imgs/5.jpg" alt="">
+    </div>
+    <ul id="tab">
+      <li class="active">1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+    <div id="prev" class="btn"> &lt; </div>
+    <div id="next" class="btn"> &gt; </div>
+  </div>
+  <script>
+    var oContainer = document.getElementById('container');
+
+    var aLi = document.querySelectorAll('#tab>li');
+    var aImg = document.querySelectorAll('#img-box>img');
+
+    var oPrev = document.getElementById('prev');
+    var oNext = document.getElementById('next');
+
+    var curIndex = 0;
+
+    // 切换选中状态
+    function change() {
+      // 清空样式
+      for (var j = 0; j < aLi.length; j++) {
+        aLi[j].className = '';
+        aImg[j].className = '';
+      }
+      // 给选中的加样式
+      aLi[curIndex].className = 'active';
+      aImg[curIndex].className = 'active';
+    }
+
+    // 1、跟选项卡一样，给 li 绑定单击事件，点击切换图片
+    for (var i = 0; i < aLi.length; i++) {
+      aLi[i].index = i;
+      aLi[i].onclick = function () {
+        // 告诉别人当前显示的是哪个图片
+        curIndex = this.index;
+        change()
+      }
+    }
+
+    // 2、翻页
+    oNext.onclick = function () {
+      curIndex += 1;
+      if (curIndex > 4) {
+        curIndex = 0;
+      }
+      change();
+    }
+    oPrev.onclick = function () {
+      curIndex -= 1;
+      if (curIndex < 0) {
+        curIndex = 4;
+      }
+      change();
+    }
+
+    // 3、自动翻页
+    var timer;
+    function go(params) {
+      // 自动翻页
+      timer = setInterval(function (params) {
+        oNext.onclick()
+      }, 1000);
+    }
+    go()
+
+    oContainer.onmouseout = function () {
+      go()
+    }
+    oContainer.onmouseover = function () {
+      // 停止翻页
+      clearInterval(timer)
+    }
+
+
+  </script>
+</body>
+
+</html>
