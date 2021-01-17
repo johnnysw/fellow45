@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>扩展运算符</title>
+</head>
+
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <script>
+    // 扩展运算符是浅拷贝
+    let arr1 = [1, 2, 3, [2, 3]];
+    let arr2 = [...arr1];
+    arr1[3][1] = 999;
+    console.log(arr2);
+
+    // 将多个数组连起来
+    let arr3 = [4, 5];
+    let arr4 = [...arr1, ...arr3];
+    console.log(arr4);
+
+    // 将一个数组作为另一个数组的一部分
+    let arr5 = [4, ...arr3, 5, 6]
+    arr5.push(666);
+    console.log(arr5);
+
+    // 伪数组（类数组） 把伪数组转换为数组
+    var aLi = document.getElementsByTagName('li');
+    let aLI = [...aLi];
+    aLI.push(888);
+    console.log(aLI);
+
+    // 
+    let obj1 = { name: 'lisi', age: 34 };
+    let obj2 = { ...obj1 };
+    console.log(obj2);
+
+    // 如果属性名重读的话，则后面的覆盖前面的
+    let obj3 = { sex: 'female', age: 23 };
+    let obj4 = { ...obj1, ...obj3, school: '哈理工' };
+    console.log(obj4);
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>
