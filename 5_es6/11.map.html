@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>map</title>
+</head>
+
+<body>
+  <script>
+    // key => value
+
+    let m1 = new Map();
+
+    // 添加成员  set
+    m1.set('name', 'lisi');
+    m1.set('age', '66');
+    console.log(m1);
+
+    console.log(m1.size);
+
+    // get()
+    console.log(m1.get('name'));
+
+    // has() => boolean
+    console.log(m1.has('name'));
+
+    // delete()
+    // console.log(m1.delete('name'));
+    // console.log(m1);
+
+    // clear()
+    // m1.clear();
+    // console.log(m1);
+
+    for (let [index, value] of m1.entries()) {
+      console.log(index, value);
+    }
+
+    let wm1 = new WeakMap();
+    wm1.set({ name: 'zhaosi' }, 'wangwu');
+    console.log(wm1);
+  </script>
+</body>
+
+</html>
