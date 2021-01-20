@@ -48,10 +48,10 @@
     }
 
     class Student extends Person {
-      constructor(...params) {
+      constructor(name, age, school) {
         // 继承父类的属性
-        super(...params)
-        this.school = params[2];
+        super(name, age)
+        this.school = school;
       }
       code() {
         console.log(this.name + ' is coding...');
@@ -60,9 +60,6 @@
     let s1 = new Student('xiaohong', 20, 'ligong')
     s1.sleep();
     s1.code();
-
-
-
 
   </script>
 </body>

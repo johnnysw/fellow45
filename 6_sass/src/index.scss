@@ -1,0 +1,132 @@
+@import "./common.scss";
+
+$theme: #eecc66;
+$student: ".student-list li";
+$attr: "width";
+// 你看得到我吗
+
+#container {
+  width: 100px;
+  height: 100px;
+  background: $theme;
+  // 选择器的嵌套
+  .box1 {
+    width: 100px;
+    height: 50px;
+    // 属性的嵌套
+    margin: {
+      top: 20px;
+      left: 50px;
+    }
+    a {
+      color: #000;
+      &:hover {
+        color: #ff0000;
+      }
+    }
+    &-red {
+      background: #ff0000;
+    }
+    // 特殊变量的引用
+    #{$student} {
+      list-style: none;
+      #{$attr}: 50px;
+      color: #{$theme};
+    }
+  }
+  // @mixin box {
+  //   width: 100px;
+  //   height: 20px;
+  // }
+  // @mixin box($w, $h) {
+  //   width: $w;
+  //   height: $h;
+  // }
+  @mixin box($w: 20px, $h: 50px) {
+    width: $w;
+    height: $h;
+  }
+  .box2 {
+    // @include box();
+    // @include box(20px,20px);
+    @include box($h: 30px);
+  }
+  $img: "banner";
+  .box3 {
+    @extend .box2;
+    font-size: 50px;
+    width: 20 * 5px;
+    padding: percentage(30px / 100px);
+    background: url("./imgs/" + $img + ".jpg");
+    &::after {
+      content: to-upper-case($string: $img);
+      content: str-index($string: $img, $substring: "a");
+      content: str-insert($string: $img, $insert: "666", $index: 3);
+    }
+  }
+  .box4 {
+    color: $theme;
+    color: lighten($color: $theme, $amount: 10%);
+    color: darken($color: $theme, $amount: 10%);
+    color: opacify($color: $theme, $amount: 0.5);
+    color: transparentize($color: $theme, $amount: 0.5);
+  }
+  $list: 1px solid #000;
+  // $list: 1px solid;
+  // $list0: blue;
+  .box5 {
+    border: $list;
+    border: append($list, red);
+    border: index($list, solid);
+    // border: join($list, $list0);
+    color: nth($list, 3);
+  }
+  $map1: (
+    color1: red,
+    color2: green,
+    color3: blue,
+  );
+  .box6 {
+    color: map-keys($map: $map1);
+    color: map-values($map: $map1);
+    color: map-has-key($map1, color3);
+  }
+  // @for $i from 1 to 10 {
+  //   .tiem#{$i} {
+  //     width: 100px * $i;
+  //   }
+  // }
+  @for $i from 1 through 10 {
+    .tiem#{$i} {
+      width: 100px * $i;
+    }
+  }
+  @each $item in $list {
+    .item-#{$item} {
+      width: #{$item};
+    }
+  }
+
+  $i: 0;
+  @while $i<5 {
+    .student-#{$i} {
+      width: 10px;
+    }
+    $i: $i + 1;
+  }
+
+  @function fn1($n) {
+    @if ($n == 0) {
+      @return red;
+    } @else if($n ==1) {
+      @return green;
+    } @else {
+      // @warn '警告⚠️';
+      // @error '出错了！！！！';
+      @return blue;
+    }
+  }
+  .box7 {
+    color: fn1(2);
+  }
+}
