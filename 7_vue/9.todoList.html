@@ -18,9 +18,9 @@
     <input v-model="msg" type="text" @keyup="search" />
     <button @click="add">添加</button>
     <ul>
-      <li v-for="(item,index) in showList" :class="{active:item.isActive}">
+      <li v-for="item in showList" :class="{active:item.isActive}">
         <span @click="change(item)">{{item.content}}</span>
-        <button @click="del(index)">删除</button>
+        <button @click="del(item)">删除</button>
       </li>
     </ul>
   </div>
@@ -82,9 +82,15 @@
           // this.isActive = !this.isActive;
           obj.isActive = !obj.isActive;
         },
-        del(index) {
+        del(obj) {
+          // 找到要删除的元素在 list 中对应的索引
+          let index = this.list.findIndex((value, index, arr) => {
+            return value == obj
+          })
           this.list.splice(index, 1);
           this.showList = [...this.list];
+          this.msg = '';
+
         },
         search() {
           this.showList = this.list.filter((value, index, arr) => {
