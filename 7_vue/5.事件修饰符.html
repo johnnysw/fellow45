@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style lang="">
+    #div1 {
+      width: 200px;
+      height: 200px;
+      background: #ff0000;
+    }
+
+    #div2 {
+      width: 100px;
+      height: 100px;
+      background: #00ff00;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 1、引入 vue -->
+  <div id="app">
+    <div id="div1" v-on:click="fn1">div1
+      <div id="div2" v-on:click.stop="fn2">div2</div>
+    </div>
+    <a v-on:click.prevent="fn3" href="https://www.baidu.com"> 百度一下</a>
+  </div>
+
+  <script src="./vue.js"></script>
+  <script>
+    let vm = new Vue({
+      // 2、确定要挂载的元素
+      el: '#app',
+      // 3、声明要绑定的数据
+      data: {
+
+      },
+      methods: {
+        fn1() {
+          console.log('div1');
+        },
+        fn2() {
+          console.log('div2');
+        },
+        fn3() {
+          console.log('aaaa');
+        }
+      },
+    })
+  </script>
+</body>
+
+</html>
