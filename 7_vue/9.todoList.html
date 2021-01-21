@@ -15,12 +15,12 @@
 <body>
   <!-- 1、引入 vue -->
   <div id="app">
-    <input v-model="msg" type="text" />
+    <input v-model="msg" type="text" @keyup="search" />
     <button @click="add">添加</button>
     <ul>
-      <li v-for="item in list" @click="change(item)" :class="{active:item.isActive}">
-        {{item.content}}
-        <button>删除</button>
+      <li v-for="(item,index) in showList" :class="{active:item.isActive}">
+        <span @click="change(item)">{{item.content}}</span>
+        <button @click="del(index)">删除</button>
       </li>
     </ul>
   </div>
@@ -52,16 +52,44 @@
             isActive: false
           },
         ],
+        showList: [
+          {
+            content: '写作业 1',
+            isActive: false
+          },
+          {
+            content: '写作业 2',
+            isActive: true
+          },
+          {
+            content: '写作业 3',
+            isActive: false
+          },
+
+        ]
         // isActive: false
       },
       methods: {
         add() {
-          this.list.push(this.msg);
+          this.list.push({
+            content: this.msg,
+            isActive: false
+          });
+          this.showList = [...this.list];
           this.msg = '';
         },
         change(obj) {
           // this.isActive = !this.isActive;
           obj.isActive = !obj.isActive;
+        },
+        del(index) {
+          this.list.splice(index, 1);
+          this.showList = [...this.list];
+        },
+        search() {
+          this.showList = this.list.filter((value, index, arr) => {
+            return value.content.includes(this.msg)
+          })
         }
       }
     })
