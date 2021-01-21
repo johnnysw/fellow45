@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .div1 {
+      color: rosybrown;
+    }
+
+    .div2 {
+      font-size: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 1、引入 vue -->
+  <div id="app">
+    <div v-bind:class="{div1:isDiv1, div2:isDiv2}">div1</div>
+    <div :class="['div1', isDiv2? 'div2' : '' ]">div2</div>
+
+    <div :index="index666"></div>
+  </div>
+
+  <script src="./vue.js"></script>
+  <script>
+    let vm = new Vue({
+      // 2、确定要挂载的元素
+      el: '#app',
+      // 3、声明要绑定的数据
+      data: {
+        isDiv1: false,
+        isDiv2: false,
+        index666:888
+      }
+    })
+  </script>
+</body>
+
+</html>
