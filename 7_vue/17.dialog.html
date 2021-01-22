@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .wrapper {
+      padding: 0 10px;
+    }
+
+    .dia-box {
+      width: 400px;
+      background: #7175ac;
+      border-radius: 5px;
+      border: 1px solid #000;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .dia-box header,
+    .dia-box footer {
+      height: 40px;
+      line-height: 40px;
+    }
+
+    .dia-box header span {
+      float: right;
+      cursor: pointer;
+    }
+
+    .dia-box main {
+      border-top: solid 1px #cccccc;
+      border-bottom: solid 1px #cccccc;
+    }
+
+    .dia-box main label {
+      display: inline-block;
+      width: 80px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 1、引入 vue -->
+  <div id="app">
+    <button @click="showLogin">登录</button>
+    <button @click="showRegister">注册</button>
+    <my-dialog v-show="isLoginShow" title="登录" @closedia="hide">
+      <p>
+        <label for="login-username"> 用户名：</label>
+        <input id="login-username" type="text">
+      </p>
+      <p>
+        <label for="login-pwd">密码：</label>
+        <input id="login-pwd" type="text">
+      </p>
+    </my-dialog>
+
+    <my-dialog v-show="isRegisterShow" title="注册" @closedia="hide">
+      <p>
+        <label for="regist-username"> 用户名：</label>
+        <input id="regist-username" type="text">
+      </p>
+      <p>
+        <label for="regist-pwd">密码：</label>
+        <input id="regist-pwd" type="text">
+      </p>
+      <p>
+        <label for="regist-re-pwd">确认密码：</label>
+        <input id="regist-re-pwd" type="text">
+      </p>
+    </my-dialog>
+
+  </div>
+
+  <!-- 组件部分 -->
+  <template id="tpl">
+    <div class="dia-box">
+      <header class="wrapper">
+        {{title}}
+        <span @click="close">X</span>
+      </header>
+      <main class="wrapper">
+        <slot></slot>
+      </main>
+      <footer class="wrapper">
+        <button @click="close">{{title}}</button>
+      </footer>
+    </div>
+  </template>
+
+  <script src="./vue.js"></script>
+  <script>
+    let vm = new Vue({
+      // 2、确定要挂载的元素
+      el: '#app',
+      // 3、声明要绑定的数据
+      data: {
+        isLoginShow: false,
+        isRegisterShow: false,
+      },
+      methods: {
+        showLogin() {
+          this.isLoginShow = true;
+          this.isRegisterShow = false;
+        },
+        showRegister() {
+          this.isRegisterShow = true;
+          this.isLoginShow = false;
+        },
+        hide() {
+          this.isLoginShow = false;
+          this.isRegisterShow = false;
+        }
+      },
+      components: {
+        'myDialog': {
+          template: '#tpl',
+          props: ['title'],
+          methods: {
+            close() {
+              this.$emit('closedia');
+            }
+          }
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

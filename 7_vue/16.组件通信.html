@@ -12,13 +12,13 @@
   <div id="app">
     {{count}}
     <!-- <my-com :title="title" :fn1="add1"  ></my-com> -->
-    <my-com :title="title" @add666="add1"  ></my-com>
+    <my-com :msg="title" @add666="add1"></my-com>
   </div>
 
   <!-- 组件部分 -->
   <template id="tpl">
     <div>
-      <h3> 标题： {{title}} </h3>
+      <h3> 标题： {{msg}} </h3>
       <button @click="add">++</button>
     </div>
   </template>
@@ -43,7 +43,7 @@
           data() {
             return {}
           },
-          props: ['title', 'fn1'],
+          props: ['msg', 'fn1'],
           methods: {
             add() {
 
@@ -55,7 +55,7 @@
 
               // 方案二
               this.$emit('add666');
-            } 
+            }
           }
         }
       }
