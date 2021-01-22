@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 1、引入 vue -->
+  <div id="app">
+    <div v-for="(item,index) in list" :key="index">
+      <h3>{{item}}</h3>
+      <h5>{{item}}</h5>
+    </div>
+
+    <!-- template不会被渲染在dom 结构中 -->
+    <template v-for="(item,index) in list">
+      <h3>{{item}}</h3>
+      <h5>{{item}}</h5>
+    </template>
+  </div>
+
+  <script src="./vue.js"></script>
+  <script>
+    let vm = new Vue({
+      // 2、确定要挂载的元素
+      el: '#app',
+      // 3、声明要绑定的数据
+      data: {
+        list: [1, 2, 3]
+      }
+    })
+  </script>
+</body>
+
+</html>

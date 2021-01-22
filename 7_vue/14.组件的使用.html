@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 1、引入 vue -->
+  <div id="app">
+    <my-com title="全局组件" :msg="msg"></my-com>
+    <!-- <tpl1 title="局部组件" :msg="msg"></tpl1> -->
+  </div>
+  <div id="app1">
+    <my-com title="全局组件" :msg="msg"></my-com>
+    <tpl1 title="局部组件" :msg="msg"></tpl1>
+  </div>
+  <script src="./vue.js"></script>
+  <script>
+    // 全局组件
+    Vue.component('myCom', {
+      template: '<div> {{ title }}  {{msg}} </div>',
+      /* 
+        通过 props 来接收父组件传的值
+      */
+      props: ['title', 'msg']
+    })
+    let vm1 = new Vue({
+      // 2、确定要挂载的元素
+      el: '#app',
+      // 3、声明要绑定的数据
+      data: {
+        msg: 'hello word'
+      }
+    })
+
+    // 局部组件
+    let vm2 = new Vue({
+      el: '#app1',
+      data: {
+        msg: 'hello 666'
+      },
+      components: {
+        'tpl1': {
+          template: '<div> {{ title }}  {{msg}} </div>',
+          props: ['title', 'msg']
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

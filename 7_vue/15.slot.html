@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 1、引入 vue -->
+  <div id="app">
+    <my-com :msg="msg" >
+      <h3 slot="slot1">haha</h3>
+      <h5 slot="slot2">lala</h5>
+    </my-com>
+  </div>
+  <template id="my-com">
+    <div>
+      <slot name="slot1"></slot>
+      <h1>组件</h1>
+      <p>{{msg}}</p>
+      <p>{{ title }}</p>
+      <p>{{count}}</p>
+      <button @click="add">+++</button>
+      <slot name="slot2"></slot>
+    </div>
+  </template>
+
+
+  <script src="./vue.js"></script>
+  <script>
+    let vm = new Vue({
+      // 2、确定要挂载的元素
+      el: '#app',
+      // 3、声明要绑定的数据
+      data: {
+        msg: 'hello word'
+      },
+      components: {
+        'myCom': {
+          template: '#my-com',
+          //组件是要复用的，为了避免组件之间的 data 互相干扰，采用函数返回值的方式定义 data 
+          props:['msg'],
+          data() {
+            return {
+              title: '今天讲组件',
+              count: 0
+            }
+          },
+          methods: {
+            add() {
+              this.count++;
+            }
+          }
+        }
+      }
+
+    })
+  </script>
+</body>
+
+</html>
