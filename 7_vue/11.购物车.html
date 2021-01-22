@@ -6,15 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    *{
+    * {
       margin: 0;
       padding: 0;
     }
-    #app{
+
+    #app {
       width: 500px;
       margin: 30px auto;
     }
-    li{
+
+    li {
       list-style: none;
       height: 40px;
       line-height: 40px;
@@ -24,8 +26,13 @@
       display: flex;
       justify-content: space-between;
     }
-    ul{
+
+    ul {
       border-bottom: 1px solid #000;
+    }
+
+    .active {
+      background: #ce6b1a;
     }
   </style>
 </head>
@@ -35,13 +42,19 @@
   <div id="app">
     <h1>商品列表</h1>
     <ul>
-      <li v-for="(item,index) in list" :key="index">
+      <li :class="{active:item.isActive}" @click="change(item)" v-for="(item,index) in list" :key="index">
         <span>{{item.name}}</span>
         <span>{{item.price}}</span>
       </li>
     </ul>
-    <h3>总价：</h3>
+    <h3>总价：{{ sum() }}</h3>
+    <h3>总价：{{ total }}</h3>
+    <input v-model="msg" type="text" />
   </div>
+  <!-- 计算属性和方法调用的区别：
+      方法调用：每当触发页面重新渲染时（data 当中有数据改变），方法就会被调用；
+      计算属性：只有在计算所需的相关依赖发生变化时，才会重新计算；
+  -->
 
   <script src="./vue.js"></script>
   <script>
@@ -50,6 +63,7 @@
       el: '#app',
       // 3、声明要绑定的数据
       data: {
+        msg: '',
         list: [
           {
             name: '衬衫',
@@ -72,6 +86,34 @@
             isActive: false
           },
         ],
+      },
+      computed: {
+        // 计算属性必须有返回值
+        total() {
+          let count = 0;
+          this.list.forEach(element => {
+            if (element.isActive === true) {
+              count += element.price
+            }
+          });
+          console.log(999);
+          return count;
+        }
+      },
+      methods: {
+        change(obj) {
+          obj.isActive = !obj.isActive;
+        },
+        sum() {
+          let count = 0;
+          this.list.forEach(element => {
+            if (element.isActive === true) {
+              count += element.price
+            }
+          });
+          console.log(666);
+          return count;
+        }
       }
     })
   </script>
