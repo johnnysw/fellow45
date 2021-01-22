@@ -84,7 +84,7 @@
         },
         del(obj) {
           // 找到要删除的元素在 list 中对应的索引
-          let index = this.list.findIndex((value, index, arr) => {
+          let index = this.list.findIndex((value) => {
             return value == obj
           })
           this.list.splice(index, 1);
@@ -93,7 +93,7 @@
 
         },
         search() {
-          this.showList = this.list.filter((value, index, arr) => {
+          this.showList = this.list.filter((value) => {
             return value.content.includes(this.msg)
           })
         }

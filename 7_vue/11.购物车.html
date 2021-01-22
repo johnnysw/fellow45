@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    #app{
+      width: 500px;
+      margin: 30px auto;
+    }
+    li{
+      list-style: none;
+      height: 40px;
+      line-height: 40px;
+      background: #88c326;
+      margin: 10px 0;
+      padding: 0 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+    ul{
+      border-bottom: 1px solid #000;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 1、引入 vue -->
+  <div id="app">
+    <h1>商品列表</h1>
+    <ul>
+      <li v-for="(item,index) in list" :key="index">
+        <span>{{item.name}}</span>
+        <span>{{item.price}}</span>
+      </li>
+    </ul>
+    <h3>总价：</h3>
+  </div>
+
+  <script src="./vue.js"></script>
+  <script>
+    let vm = new Vue({
+      // 2、确定要挂载的元素
+      el: '#app',
+      // 3、声明要绑定的数据
+      data: {
+        list: [
+          {
+            name: '衬衫',
+            price: 999,
+            isActive: false
+          },
+          {
+            name: '电脑',
+            price: 13800,
+            isActive: false
+          },
+          {
+            name: '裙子',
+            price: 1999,
+            isActive: false
+          },
+          {
+            name: '裤子',
+            price: 888,
+            isActive: false
+          },
+        ],
+      }
+    })
+  </script>
+</body>
+
+</html>
