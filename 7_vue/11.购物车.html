@@ -114,6 +114,12 @@
           console.log(666);
           return count;
         }
+      },
+      // watch：监听属性的变化，被检测的属性一旦发生改变就会触发对应的方法
+      watch: {
+        msg: function (newVal, oldVal) {
+          console.log(newVal, oldVal);
+        }
       }
     })
   </script>
