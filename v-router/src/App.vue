@@ -8,9 +8,10 @@
         name + params : 地址栏【不能】够看到参数，刷新页面时参数【会】丢失
         url + params : 地址栏【能】够看到参数，刷新页面时参数【不会】丢失
      -->
-    <!-- <router-link :to="{ path:'/user',query:{ name:'xiaoming',id:1001 } }">用户详情页</router-link> -->
-    <router-link :to="{ name:'User',params:{ name:'xiaoming',id:1001 } }">用户详情页</router-link> |
-    <router-link to="/detail/10086/21800">课程详情</router-link>
+    <router-link :to="{ path:'/user',query:{ name:'xiaoming',id:1001 } }">用户详情页</router-link> |
+    <!-- <router-link :to="{ name:'User',params:{ name:'xiaoming',id:1001 } }">用户详情页</router-link> | -->
+    <router-link to="/detail/10086/21800">课程详情</router-link> |
+    <router-link to="/test"> 活动页面</router-link>
     <router-view />
   </div>
 </template>

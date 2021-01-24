@@ -5,11 +5,21 @@
 </template>
 
 <script>
-  export default {
-    
-  }
+export default {
+  beforeRouteEnter(to, from, next) {
+    console.log("to", to);
+    console.log("from", from);
+    console.log("next", next);
+    next();
+  },
+  beforeRouteLeave(to, from, next) {
+    console.log("to", to);
+    console.log("from", from);
+    console.log("next", next);
+    next();
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-
 </style>
