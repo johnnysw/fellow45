@@ -9,6 +9,7 @@ export default new Vuex.Store({
     count: 0,
     num: 10
   },
+  // 相当于 computed
   getters: {
     result(state) {
       return state.count * state.num;
