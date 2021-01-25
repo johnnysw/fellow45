@@ -11,7 +11,8 @@
     <router-link :to="{ path:'/user',query:{ name:'xiaoming',id:1001 } }">用户详情页</router-link> |
     <!-- <router-link :to="{ name:'User',params:{ name:'xiaoming',id:1001 } }">用户详情页</router-link> | -->
     <router-link to="/detail/10086/21800">课程详情</router-link> |
-    <router-link to="/test"> 活动页面</router-link>
+    <router-link to="/test"> 活动页面</router-link> |
+    <router-link to="/count"> vuex</router-link>
     <router-view />
   </div>
 </template>

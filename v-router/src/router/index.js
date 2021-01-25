@@ -56,6 +56,11 @@ const routes = [
     }
   }
   , {
+    path: '/count',
+    name: 'Count',
+    component: () => import('../views/Count.vue')
+  }
+  , {
     path: '*',
     name: 'Error',
     component: () => import('../views/Error.vue')
