@@ -1,14 +1,38 @@
 <template>
-  <footer>
-    <router-link to="/">剧集</router-link>
-    <router-link to="/music">音乐</router-link>
-    <router-link to="/book">书籍</router-link>
-    <router-link to="/chat">聊天</router-link>
+  <footer :style="{backgroundColor: curMenu.bgColor }">
+    <div
+      v-for=" menu in menuList "
+      :key="menu.path"
+      @click="switchMenu(menu)"
+    >
+      <router-link :to="menu.path">{{menu.name}}</router-link>
+    </div>
   </footer>
 </template>
 
 <script>
-export default {};
+import { mapState, mapMutations } from "vuex";
+export default {
+  computed: {
+    ...mapState(["curMenu"]),
+  },
+  data() {
+    return {
+      menuList: [
+        { path: "/", name: "剧集", bgColor: "#ff0000" },
+        { path: "/music", name: "音乐", bgColor: "#00ff00" },
+        { path: "/book", name: "书籍", bgColor: "#0000ff" },
+        { path: "/chat", name: "聊天", bgColor: "#f00889" },
+      ],
+    };
+  },
+  methods: {
+    ...mapMutations(["setCurMenu"]),
+    switchMenu(menu) {
+      this.setCurMenu(menu)
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
