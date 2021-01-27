@@ -77,9 +77,9 @@ export default {
         scrollT = htmlDom.scrollTop;
         // 滚动到底部
         if (fullH == deviceH + scrollT) {
-          if (this.start < 4) {
+          if (this.start < 40) {
             // 请求下一页数据
-            this.start++;
+            this.start += 10;
             this.getData();
           }
         }
