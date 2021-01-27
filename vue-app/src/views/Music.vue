@@ -4,17 +4,6 @@
       :audio="audio"
       :lrcType="0"
     />
-    <ul>
-      <li
-        v-for="(item,index) in playList"
-        :key="item.id"
-        @click="getSong(item.id)"
-      >
-        <span>{{index + 1}}</span>
-        <span class="title">{{item.name}}</span>
-        <span>{{item.ar[0].name}}</span>
-      </li>
-    </ul>
   </div>
 </template>
 
@@ -32,48 +21,41 @@ export default {
   },
   data() {
     return {
-      audio: {
-        name: "",
-        artist: "",
-        url: "",
-        cover: '', // prettier-ignore
-      },
+      audio: [],
       playList: [],
+      mp3Url: "",
+      id: "",
     };
   },
   methods: {
     getData() {
       this.axios
         .get("https://bird.ioliu.cn/netease/playlist?id=5462180032")
-        .then((res) => {
+        .then(async (res) => {
+          console.log(res);
           this.playList = res.data.playlist.tracks;
-          this.getSong(this.playList[0].id);
+          this.audio = this.playList.map((item, index) => {       
+            this.getSong(item.id, index);// 异步的操作不会立刻拿到结果，所以在该方法的 then 里面去修改 mp3 的 url
+            return {
+              name: item.name,
+              artist: item.ar[0].name,
+              url: this.mp3Url,
+              cover: item.al.picUrl, 
+              id: item.id,
+            };
+          });
         });
     },
-    getSong(id) {
+    getSong(id, index) {
       this.axios
         .get("https://bird.ioliu.cn/netease/song?id=" + id)
         .then((res) => {
-          this.audio = {
-            name: res.data.data.name,
-            artist: res.data.data.ar[0].name,
-            url: res.data.data.mp3.url,
-            cover: res.data.data.al.picUrl, // prettier-ignore
-          };
+          this.audio[index].url = res.data.data.mp3.url;
         });
     },
   },
 };
 </script>
 
-<style lang="scss" scoped> 
-li {
-  display: flex;
-  span {
-    flex: 1;
-  }
-  .title {
-    flex: 2;
-  }
-}
+<style lang="scss" scoped>
 </style>
