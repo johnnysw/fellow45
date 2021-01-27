@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <ComHeader></ComHeader>
-    <router-view />
+    <router-view class="main" />
     <ComFooter></ComFooter>
   </div>
 </template>
@@ -21,7 +21,9 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
+  .main {
+    margin: 1rem 0;
+  }
 }
 
 a {

@@ -40,7 +40,7 @@ footer {
   display: flex;
   justify-content: space-around;
   position: fixed;
-  bottom: 0;
+  bottom: -0.02rem;
   width: 100%;
   height: 1rem;
   line-height: 1rem;
