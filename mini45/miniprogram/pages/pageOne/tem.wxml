@@ -1,0 +1,4 @@
+<template name="tem">
+  <view>姓名：{{name}}</view>
+  <view>年龄：{{age}}</view>
+</template>

@@ -1,0 +1,9 @@
+{{num}}
+<button bindtap="add" data-step="{{5}}" type="primary">add</button>
+<view class="box1" bindtap="tap1">
+  <view class="box2" bindtap="tap2">
+    <view class="box3" catchtap="tap3">
+    </view>
+  </view>
+</view>
+
