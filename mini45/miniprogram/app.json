@@ -3,7 +3,8 @@
     "pages/pageOne/pageOne",
     "pages/pageTwo/pageTwo",
     "pages/pageThree/pageThree",
-    "pages/pageFour/pageFour"
+    "pages/pageFour/pageFour",
+    "pages/pageFive/pageFive"
   ],
   "window": {
     "backgroundColor": "#ff0000",

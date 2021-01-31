@@ -40,6 +40,7 @@
   "appid": "wxe684fee35e1795cc",
   "projectname": "mini45",
   "libVersion": "2.14.1",
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
   "condition": {
     "plugin": {
       "list": []
@@ -73,6 +74,12 @@
         {
           "name": "pageFour",
           "pathName": "pages/pageFour/pageFour",
+          "query": "name=lisi&sex=男",
+          "scene": null
+        },
+        {
+          "name": "pageFive",
+          "pathName": "pages/pageFive/pageFive",
           "query": "name=lisi&sex=男",
           "scene": null
         }
