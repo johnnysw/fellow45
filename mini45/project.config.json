@@ -69,6 +69,12 @@
           "pathName": "pages/pageThree/pageThree",
           "query": "name=lisi&sex=男",
           "scene": null
+        },
+        {
+          "name": "pageFour",
+          "pathName": "pages/pageFour/pageFour",
+          "query": "name=lisi&sex=男",
+          "scene": null
         }
       ]
     }

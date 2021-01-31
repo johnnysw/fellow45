@@ -1,0 +1,5 @@
+<input bindinput="getVal" type="text" />
+<button bindtap="add" type="primary">添加记录</button>
+<button bindtap="getDB" type="primary">查询记录</button>
+<button bindtap="updateDB" type="primary">修改记录</button>
+<button bindtap="delDB" type="primary">删除记录</button>
