@@ -4,7 +4,9 @@
     "pages/pageTwo/pageTwo",
     "pages/pageThree/pageThree",
     "pages/pageFour/pageFour",
-    "pages/pageFive/pageFive"
+    "pages/pageFive/pageFive",
+    "pages/pageSix/pageSix",
+    "pages/todoList/todoList"
   ],
   "window": {
     "backgroundColor": "#ff0000",
