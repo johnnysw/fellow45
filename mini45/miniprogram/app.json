@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/pageOne/pageOne",
-    "pages/pageTwo/pageTwo"
+    "pages/pageTwo/pageTwo",
+    "pages/pageThree/pageThree"
   ],
   "window": {
     "backgroundColor": "#ff0000",
