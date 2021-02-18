@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <button id="btn">发送请求</button>
+</head>
+
+<body>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script> -->
+
+    <script>
+        let btn = document.querySelector('#btn');
+        btn.onclick = async function () {
+
+            let res = await axios.get('http://82.156.72.63:8085/product/getProductQA', {
+                headers: {
+                    "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0IiwiY3JlYXRlZCI6MTYxMzU2NzE5NTI3OCwiZXhwIjoxNjE0MTcxOTk1fQ.eBqqPB0Nsi0eX5ypHkIi5EHwW4frQJao7fZJoMOrFY_KC8iiZajorI1DA4oRsFZaArhPuvj4xekmzB-u8V9-Rw"
+                },
+                params: {
+                    productId: 159
+                }
+            })
+            
+
+            console.log(res);
+
+
+        };
+    </script>
+</body>
+
+</html>

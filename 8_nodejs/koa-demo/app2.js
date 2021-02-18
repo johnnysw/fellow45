@@ -5,6 +5,10 @@ app.use((myCtx) => {
     myCtx.body = '<h1> hello mykoa hehe </h1>'
 });
 
+app.use((myCtx) => {
+    myCtx.body = '<h1> hello mykoa haha </h1>'
+});
+
 
 app.listen(5000);
 

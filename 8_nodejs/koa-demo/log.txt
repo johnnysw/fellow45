@@ -1,0 +1,8 @@
+GET localhost:3000/xxxx/yyyy/9999
+GET localhost:3000/xxxx
+GET localhost:3000/xxxx/ttt
+GET localhost:3000/xxxx/ttt
+GET localhost:3000/xxxx/0000
+GET localhost:3000/xxxx/0000
+GET localhost:3000/xxxx/0000
+GET localhost:3000/xxxx/0000

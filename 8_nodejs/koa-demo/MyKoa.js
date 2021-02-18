@@ -2,24 +2,33 @@ const http = require('http');
 
 module.exports = class MyKoa{
 
-    myCtx = {};
+    middleware = [];    // 中间件
 
     constructor(){}
 
-    callback(obj){
-        return function(req, res){
+    callback(){
+        // var _this = this;
+
+        return (req, res) => {
             res.writeHead(200, { "Content-Type": "text/html" });
-            res.write(obj.body);
+            
+            for(let i=0; i<this.middleware.length; i++){
+                let fn = this.middleware[i]     // => fn
+                let obj = {};
+                fn(obj);
+                res.write(obj.body);
+            }
+
             res.end("");
         };
     }
 
     use(fn){  
-        fn(this.myCtx);
+       this.middleware.push(fn)
     }
 
     listen(port){
-        let server = http.createServer(  this.callback(this.myCtx)   );
+        let server = http.createServer(  this.callback()   );
         server.listen(port);
         console.log('MyKoa is starting at port ' + port);
     }
