@@ -1,0 +1,5 @@
+<slot name="slot1"></slot>
+<view class="aa">我的组件</view>
+<slot name="slot2"></slot>
+{{str}}
+<button type="primary" bindtap="add">+1</button>

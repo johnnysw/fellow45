@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>函数的扩展</title>
+</head>
+
+<body>
+  <!-- 
+    this的指向：
+      1、在事件处理函数中 this-> 绑定事件的 dom 元素
+      2、在自定义函数当中 this-> window
+      3、定时器中 this -> window
+      4、在自定义的对象当中 this -> 该自定义的对象
+      5、在类中 this -> 实力换出来的对象
+   -->
+  <button id="btn">点我</button>
+  <ul>
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+  </ul>
+  <script>
+    // 给参数设置默认值
+    // ...rest
+    function fn1(x, y, z = 888) {
+      console.log(this);//
+    }
+    fn1(1, 2, 3, 4, 5)
+    // 新增属性
+    console.log(fn1.name);//fn1
+    console.log(fn1.length);//2
+    // 箭头函数
+    let fn3 = () => { }
+    let oBtn = document.getElementById('btn');
+    oBtn.onclick = function () {
+      console.log(this);//oBtn
+      setTimeout(function (params) {
+        console.log(this);//window
+      }, 2000);
+    }
+    let obj1 = {
+      eat: function () {
+        console.log(this);//obj1
+      }
+    }
+    obj1.eat();
+    function Person(name, age) {
+      this.name = name;
+      this.age = age;
+      console.log(this);
+    }
+    let p1 = new Person('lisi', 89);
+
+    /*
+      改变 this 指向的方法：
+      call:参数是多个 （要改变的指针，后面所有参数都是这个方法的实参）
+      apply：参数时两个 （要改变的指针，【param1,param2 , ....】）
+      bind:参数是多个 （要改变的指针，后面所有参数都是这个方法的实参） 手动调用
+    */
+    var fn2 = function (x, y, z) {
+      console.log(this, x, y, z); //window
+    }
+    fn2(1, 2, 3);
+    fn2.call(oBtn, 1, 2, 3);
+    fn2.apply(oBtn, [1, 2, 3]);
+    fn2.bind(oBtn, 1, 2, 3)();
+
+    let aLi = document.getElementsByTagName('li');
+    // for (var i = 0; i < aLi.length; i++) {
+    //   aLi[i].onclick = function () {
+    //     setTimeout(function () {
+    //       console.log(this); //window
+    //     }.bind(this), 2000);
+    //   }
+    // }
+    /*
+      箭头函数的 this 问题：
+        1、箭头函数中的 this，指向的是定义时所在的对象，而不是使用时所在的对象
+        2、箭头函数自身没有 this，父作用域中的 this是谁就指向谁
+        3、如果箭头函数被非箭头函数包含，则 this指向的就是最近一层非箭头函数中的this，否则指向的就是全局对象（window）
+    */
+
+    for (var i = 0; i < aLi.length; i++) {
+      aLi[i].onclick = function () {
+        setTimeout(() => {
+          console.log(this); //window
+        }, 1000);
+      }
+    }
+
+    // let obj5 = {
+    //   name: 'obj5',
+    //   study: function () {
+    //     console.log(this);//obj5
+    //     let obj6 = {
+    //       name: 'obj6',
+    //       code: function () {
+    //         console.log(this);//obj6
+    //       }
+    //     }
+    //     obj6.code();
+    //   }
+    // }
+    // obj5.study();
+
+    // let obj5 = {
+    //   name: 'obj5',
+    //   study: function () {
+    //     console.log(this);//obj5
+    //     let obj6 = {
+    //       name: 'obj6',
+    //       code: () => {
+    //         console.log(this);//obj6
+    //       }
+    //     }
+    //     obj6.code();
+    //   }
+    // }
+    // obj5.study();
+
+    // let obj5 = {
+    //   name: 'obj5',
+    //   study: function () {
+    //     console.log(this);//obj5
+    //     setTimeout(function () {
+    //       let obj6 = {
+    //         name: 'obj6',
+    //         code: () => {
+    //           console.log(this);//window
+    //         }
+    //       }
+    //       obj6.code();
+    //     }, 1000);
+    //   }
+    // }
+    // obj5.study();
+
+    // let obj5 = {
+    //   name: 'obj5',
+    //   study: function () {
+    //     console.log(this);//obj5
+    //     setTimeout(() => {
+    //       let obj6 = {
+    //         name: 'obj6',
+    //         code: () => {
+    //           console.log(this);//obj5
+    //         }
+    //       }
+    //       obj6.code();
+    //     }, 1000);
+    //   }
+    // }
+    // obj5.study();
+
+    let obj5 = {
+      name: 'obj5',
+      study: () => {
+        console.log(this);//window
+        setTimeout(() => {
+          let obj6 = {
+            name: 'obj6',
+            code: () => {
+              console.log(this);//window
+            }
+          }
+          obj6.code();
+        }, 1000);
+      }
+    }
+    obj5.study();
+
+
+
+
+  </script>
+</body>
+
+</html>

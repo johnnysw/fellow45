@@ -1,0 +1,4 @@
+/* components/mCom/mCom.wxss */
+.aa{
+  color:#ccdd99;
+}

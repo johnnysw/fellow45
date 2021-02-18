@@ -1,0 +1,50 @@
+<!-- 变量的引入 -->
+{{str}}
+
+<!-- 小程序里没有原生的 html 标签，都是封装好的组件 -->
+<!-- for 循环 -->
+<view wx:for="{{arr}}" wx:key="index">
+  {{item}} --- {{index}}
+</view>
+
+<!-- for 循环 : 起别名-->
+<view wx:for="{{arr}}" wx:for-index="i" wx:for-item="value" wx:key="index">
+  {{value}} --- {{i}}
+</view>
+
+<!--  if ... else -->
+<view wx:if="{{num < 0}}">num 小于 0</view>
+<view wx:elif="{{num == 0}}">num 等于 0</view>
+<view wx:else>num 大于 0</view>
+
+<!-- 循环对象 -->
+<view wx:for="{{objArr}}">
+  <view>姓名：{{item.name}}</view>
+  <view>年龄：{{item.age}}</view>
+</view>
+
+<!-- block -->
+<block wx:for="{{objArr}}">
+  <view>姓名：{{item.name}}</view>
+  <view>年龄：{{item.age}}</view>
+</block>
+
+<!-- template -->
+<template name="tem1">
+  <view>姓名：name</view>
+  <view>年龄：age</view>
+</template>
+<template is="tem1"></template>
+
+<template name="tem2">
+  <view>姓名：{{name}}</view>
+  <view>年龄：{{age}}</view>
+</template>
+<template is="tem2" data="{{name:'haha',age:20}}"></template>
+
+<import src="./tem.wxml"></import>
+<view wx:for="{{objArr}}" wx:key="index">
+  <template is="tem" data="{{...item}}"></template>
+</view>
+
+<button bindtap="goTwo" type="primary" size="mini">goTwo</button>

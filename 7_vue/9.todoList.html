@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .active {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 1、引入 vue -->
+  <div id="app">
+    <input v-model="msg" type="text" @keyup="search" />
+    <button @click="add">添加</button>
+    <ul>
+      <li v-for="item in showList" :class="{active:item.isActive}">
+        <span @click="change(item)">{{item.content}}</span>
+        <button @click="del(item)">删除</button>
+      </li>
+    </ul>
+  </div>
+
+  <script src="./vue.js"></script>
+  <script>
+    let vm = new Vue({
+      // 2、确定要挂载的元素
+      el: '#app',
+      // 3、声明要绑定的数据
+      data: {
+        msg: '',
+        // list: [
+        //   '写作业 1',
+        //   '写作业 2',
+        //   '写作业 3',
+        // ],
+        list: [
+          {
+            content: '写作业 1',
+            isActive: false
+          },
+          {
+            content: '写作业 2',
+            isActive: true
+          },
+          {
+            content: '写作业 3',
+            isActive: false
+          },
+        ],
+        showList: [
+          {
+            content: '写作业 1',
+            isActive: false
+          },
+          {
+            content: '写作业 2',
+            isActive: true
+          },
+          {
+            content: '写作业 3',
+            isActive: false
+          },
+
+        ]
+        // isActive: false
+      },
+      methods: {
+        add() {
+          this.list.push({
+            content: this.msg,
+            isActive: false
+          });
+          this.showList = [...this.list];
+          this.msg = '';
+        },
+        change(obj) {
+          // this.isActive = !this.isActive;
+          obj.isActive = !obj.isActive;
+        },
+        del(obj) {
+          // 找到要删除的元素在 list 中对应的索引
+          let index = this.list.findIndex((value) => {
+            return value == obj
+          })
+          this.list.splice(index, 1);
+          this.showList = [...this.list];
+          this.msg = '';
+
+        },
+        search() {
+          this.showList = this.list.filter((value) => {
+            return value.content.includes(this.msg)
+          })
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

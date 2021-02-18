@@ -1,0 +1,4 @@
+/* miniprogram/pages/pageThree/pageThree.wxss */
+.aa{
+  font-size: 30px;
+}

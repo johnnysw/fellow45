@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 1、引入 vue -->
+  <div id="app">
+    <button v-on:click="change">💩变</button>
+    <p v-if="tag">tag是 true</p>
+    <p v-else>tag是 false</p>
+
+    <p v-show="tag">v-show="condition"</p>
+  </div>
+  <script src="./vue.js"></script>
+  <script>
+    let vm = new Vue({
+      // 2、确定要挂载的元素
+      el: '#app',
+      // 3、声明要绑定的数据
+      data: {
+        tag: false,
+      },
+      methods: {
+        change() {
+          this.tag = !this.tag;
+        }
+      },
+    })
+  </script>
+</body>
+
+</html>

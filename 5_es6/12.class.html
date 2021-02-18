@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>class</title>
+</head>
+
+<body>
+  <script>
+    // 属性写在构造函数里，方法写在原型里
+    // function Person(name, age) {
+    //   this.name = name;
+    //   this.age = age;
+    // }
+    // Person.prototype.sleep = function () {
+    //   console.log(this.name + ' is spleeping...');
+    // }
+    // let p1 = new Person('lisi', 23);
+    // p1.sleep();
+
+
+    // function Student(name, age, school) {
+    //   // 继承属性，改变 this 指向
+    //   Person.call(this, name, age);
+    //   this.school = school;
+    // }
+    // // 方法的继承
+    // Student.prototype = new Person();
+    // Student.prototype.constructor = Student;
+
+    // Student.prototype.code = function () {
+    //   console.log(this.name + ' is coding...');
+    // }
+    // let s1 = new Student('xiaohong', 20, 'ligong')
+    // s1.sleep();
+    // s1.code();
+
+    class Person {
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+      sleep() {
+        console.log(this.name + ' is spleeping...');
+      }
+    }
+
+    class Student extends Person {
+      constructor(name, age, school) {
+        // 继承父类的属性
+        super(name, age)
+        this.school = school;
+      }
+      code() {
+        console.log(this.name + ' is coding...');
+      }
+    }
+    let s1 = new Student('xiaohong', 20, 'ligong')
+    s1.sleep();
+    s1.code();
+
+  </script>
+</body>
+
+</html>

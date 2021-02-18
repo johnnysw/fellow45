@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 1、引入 vue -->
+  <div id="app">
+    {{count}}
+    <!-- <my-com :title="title" :fn1="add1"  ></my-com> -->
+    <my-com :msg="title" @add666="add1"></my-com>
+  </div>
+
+  <!-- 组件部分 -->
+  <template id="tpl">
+    <div>
+      <h3> 标题： {{msg}} </h3>
+      <button @click="add">++</button>
+    </div>
+  </template>
+  <script src="./vue.js"></script>
+  <script>
+    let vm = new Vue({
+      // 2、确定要挂载的元素
+      el: '#app',
+      // 3、声明要绑定的数据
+      data: {
+        title: 'hello word',
+        count: 0
+      },
+      methods: {
+        add1() {
+          this.count++;
+        }
+      },
+      components: {
+        'myCom': {
+          template: '#tpl',
+          data() {
+            return {}
+          },
+          props: ['msg', 'fn1'],
+          methods: {
+            add() {
+
+              // 强烈不推荐，不要使用🙅🙅‍♀️
+              // vm.count++;
+
+              // 方案一
+              // this.fn1();
+
+              // 方案二
+              this.$emit('add666');
+            }
+          }
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

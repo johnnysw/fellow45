@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>对象的扩展</title>
+</head>
+
+<body>
+  <script>
+    // 对象的简写  （当属性名和变量名相同时）
+    let name = 'lisi';
+    let age = 55;
+    let obj1 = {
+      name: name,
+      age: age
+    };
+    // console.log(obj1);
+    let obj2 = {
+      name,
+      age
+    }
+    console.log(obj2);
+
+    // 属性名表达式[]
+    let xxx = 'myname';
+    let obj3 = {
+      name: 'zhaosi',
+      age: 77,
+      [xxx + '666']: 'wangwu'
+    }
+    console.log(obj3);
+
+    // Object.is() 返回结果和===基本一致
+    console.log('111' === 111); // flase
+    console.log(Object.is('111', 111)); // flase
+
+    console.log(+0 === -0); // true
+    console.log(Object.is(+0, -0)); // flase
+
+    console.log(NaN === NaN); //false
+    console.log(Object.is(NaN, NaN));//true
+
+
+    // 对象的合并 浅拷贝！！！
+    let obj4 = Object.assign({}, obj1, obj3);
+    console.log(obj4);
+
+    // 判断对象中是否包含某个属性
+    console.log('name' in obj4);
+
+    // 对象的遍历
+    // for ... in
+    for (let p in obj4) {
+      console.log(p); // 属性名
+      console.log(obj4[p]);//属性值
+    }
+    console.log(Object.keys(obj4));
+    console.log(Object.values(obj4));
+    console.log(Object.entries(obj4));
+  </script>
+</body>
+
+</html>

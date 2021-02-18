@@ -1,0 +1,3 @@
+<button bindtap="callCloud" type="primary">调用云函数</button>
+<button bindtap="cloudGet" type="primary">云函数获取数据</button>
+<button bindtap="cloudUpdate" type="primary">云函数更新数据</button>

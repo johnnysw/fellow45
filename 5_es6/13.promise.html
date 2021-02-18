@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script> -->
+  <script src="./jquery-1.11.3.min.js"></script>
+  <script>
+    // 协议、域名、端口号,这三个有一个不同，都叫做跨域
+    // 
+    // let student
+    let obj = {
+      eat() {
+        console.log('eating');
+      }
+    }
+    obj.eat()
+    // $.get('https://bird.ioliu.cn/v1?url=http://www.bing.com/HPImageArchive.aspx?format=js&idx=1&n=1',function (res) {
+    //   console.log(res);
+    // });
+
+    // 回调地域
+    // $.get('./data/a.json', function (res) {
+    //   console.log('a', res);
+    //   $.get('./data/b.json', function (res) {
+    //     console.log('b', res);
+    //     $.get('./data/c.json', function (res) {
+    //       console.log('c', res);
+    //     })
+    //   })
+    // })
+
+    // promise  then()
+
+    // let p1 = new Promise(function (resolve, reject) {
+    //   setTimeout(() => {
+    //     // resolve('success');
+    //     reject('fail')
+    //   }, 2000);
+    // })
+
+    // p1.then((res) => {
+    //   console.log(res);
+    // }).catch(err => {
+    //   console.log(err);
+    // })
+
+    function getData(url) {
+      return new Promise((resolve, reject) => {
+        $.get(url, function (res) {
+          if (url == './data/b.json') {
+            reject('fail')
+          } else {
+            resolve(res)
+          }
+        })
+      })
+    }
+
+    // getData('./data/a.json').then(res => {
+    //   console.log(res);
+    //   return getData('./data/b.json')
+    // }).then(res => {
+    //   console.log(res);
+    //   return getData('./data/c.json')
+    // }).then(res => {
+    //   console.log(res);
+    // }).catch(err => {
+    //   console.log(err);
+    // })
+
+    let p1 = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        console.log('p1 ok');
+        resolve();
+      }, 1000);
+    })
+    let p2 = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        console.log('p2 ok');
+        resolve();
+      }, 500);
+    })
+    let p3 = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        console.log('p3 ok');
+        resolve();
+      }, 2000);
+    })
+
+    // Promise.race([p1, p2, p3]).then(() => {
+    //   console.log('成功');
+    // })
+
+    Promise.all([p1, p2, p3]).then(() => {
+      console.log('成功');
+    })
+
+    
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

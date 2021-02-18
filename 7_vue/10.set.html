@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 1、引入 vue -->
+  <div id="app">
+    <ul>
+      <li v-for="(item,index) in list" :key="index">
+        {{ item }}
+      </li>
+      <button @click="change">变</button>
+    </ul>
+  </div>
+
+  <script src="./vue.js"></script>
+  <script>
+    let vm = new Vue({
+      // 2、确定要挂载的元素
+      el: '#app',
+      // 3、声明要绑定的数据
+      data: {
+        list: [1, 2, 3, 5, 4]
+      },
+      methods: {
+        change() {
+          // 这种方式修改的值不会触发页面的重新渲染
+          // this.list[3] = 666;
+
+          // Vue.set(this.list, 3, 666);
+          this.$set(this.list, 3, 999);
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

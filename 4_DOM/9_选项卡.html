@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>选项卡</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    #container {
+      width: 300px;
+      margin: 0 auto;
+      background: gold;
+    }
+
+    #tabs {
+      border-bottom: 1px solid #000;
+      height: 40px;
+    }
+
+    #tabs li {
+      float: left;
+      width: 100px;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+    }
+
+    #tabs li.active {
+      background: green;
+      color: #ffffff;
+    }
+
+    #content {
+      height: 200px;
+    }
+
+    #content>div {
+      display: none;
+      height: 200px;
+    }
+
+    #content>div.active {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <ul id="tabs">
+      <li class="active">菜单1</li>
+      <li>菜单2</li>
+      <li>菜单3</li>
+    </ul>
+    <div id="content">
+      <div class="active">1111111</div>
+      <div>2222222</div>
+      <div>3333333</div>
+    </div>
+  </div>
+  <script>
+    var oTabs = document.getElementById('tabs');
+    var aLi = oTabs.getElementsByTagName('li');
+
+    var oContent = document.getElementById('content');
+    var aDiv = oContent.getElementsByTagName('div');
+    for (var i = 0; i < aLi.length; i++) {
+      //aLi[i]是一个 dom 【对象】
+      aLi[i].index = i;
+      aLi[i].onclick = function () {
+        // 清空所有的 active
+        for (var j = 0; j < aLi.length; j++) {
+          aLi[j].className = '';
+          aDiv[j].className = '';
+        }
+
+        // 给点击的元素加上 active
+        this.className = 'active';
+        aDiv[this.index].className = 'active';
+      }
+    }
+
+    // 获取对象的属性
+    var obj = { name: 'wangzehao' };
+    // console.log(obj.name);
+
+    // 给对象加属性
+    obj.age = 20;
+    // console.log(obj);
+  </script>
+</body>
+
+</html>

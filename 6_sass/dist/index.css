@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  width: 100px;
+  height: 100px;
+  background: #eecc66;
+}
+#container .box1 {
+  width: 100px;
+  height: 50px;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+#container .box1 a {
+  color: #000;
+}
+#container .box1 a:hover {
+  color: #ff0000;
+}
+#container .box1-red {
+  background: #ff0000;
+}
+#container .box1 .student-list li {
+  list-style: none;
+  width: 50px;
+  color: #eecc66;
+}
+#container .box2, #container .box3 {
+  width: 20px;
+  height: 30px;
+}
+#container .box3 {
+  font-size: 50px;
+  width: 100px;
+  padding: 30%;
+  background: url("./imgs/banner.jpg");
+}
+#container .box3::after {
+  content: "BANNER";
+  content: 2;
+  content: "ba666nner";
+}
+#container .box4 {
+  color: #eecc66;
+  color: #f3db94;
+  color: #e9bd38;
+  color: #eecc66;
+  color: rgba(238, 204, 102, 0.5);
+}
+#container .box5 {
+  border: 1px solid #000;
+  border: 1px solid #000 red;
+  border: 2;
+  color: #000;
+}
+#container .box6 {
+  color: color1, color2, color3;
+  color: red, green, blue;
+  color: true;
+}
+#container .tiem1 {
+  width: 100px;
+}
+#container .tiem2 {
+  width: 200px;
+}
+#container .tiem3 {
+  width: 300px;
+}
+#container .tiem4 {
+  width: 400px;
+}
+#container .tiem5 {
+  width: 500px;
+}
+#container .tiem6 {
+  width: 600px;
+}
+#container .tiem7 {
+  width: 700px;
+}
+#container .tiem8 {
+  width: 800px;
+}
+#container .tiem9 {
+  width: 900px;
+}
+#container .tiem10 {
+  width: 1000px;
+}
+#container .item-1px {
+  width: 1px;
+}
+#container .item-solid {
+  width: solid;
+}
+#container .item-#000 {
+  width: #000;
+}
+#container .student-0 {
+  width: 10px;
+}
+#container .student-1 {
+  width: 10px;
+}
+#container .student-2 {
+  width: 10px;
+}
+#container .student-3 {
+  width: 10px;
+}
+#container .student-4 {
+  width: 10px;
+}
+#container .box7 {
+  color: blue;
+}
+
+/*# sourceMappingURL=index.css.map */

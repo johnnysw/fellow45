@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>let</title>
+</head>
+
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <!-- 
+    let 和 var 的区别：
+      1、let 不允许重复声明变量
+      2、let 不存在变量提升
+      3、let 存在一个块级作用域的概念,以{}为标识，一对{}就是一个语句块，就会产生一个块级作用域
+   -->
+  <script>
+
+    // var 可以重复声明变量
+    // var aa = 'haha';
+    // var aa = 'xixi';
+    // console.log(aa); // xixi
+
+    // let 不允许重复声明变量
+    // let bb = 'haha';
+    // let bb = 'xixi';
+    // console.log(bb);//Identifier 'bb' has already been declared
+
+
+    // 变量提升
+    // console.log(str);//undefined
+    // var str = 'hello';
+
+    // var str;
+    // console.log(str);//undefined
+    // str = 'hello';
+
+    // console.log(str);//Cannot access 'str' before initialization
+    // let str = 'hello';
+
+    // if(true){
+    //   var a = 10;
+    // }
+    // console.log(a);//10
+
+    // if (true) {
+    //   let a = 10;
+    // }
+    // console.log(a);// a is not defined
+
+    // for (var i = 0; i < 3; i++) {
+    //   console.log(i);
+    // }
+    // console.log(i);//3
+
+    // for (let i = 0; i < 3; i++) {
+    //   console.log(i);
+    // }
+    // console.log(i);//i is not define
+
+
+    var aLi = document.getElementsByTagName('li');
+    for (let i = 0; i < aLi.length; i++) {
+      aLi[i].onclick = function () {
+        console.log(i);//每次都是 3
+      }
+    }
+
+
+    // 闭包：外部函数中声明了内部函数，内部函数中引用了外部函数中的局部变量，这样外部函数执行完毕后，内存不释放
+    for (var i = 0; i < aLi.length; i++) {
+      (function (index) {
+        aLi[index].onclick = function () {
+          console.log(index);//每次都是 3
+        }
+      })(i)
+    }
+
+
+    // 作用域： 
+    // 全局
+    // 局部（函数）（块级作用域）
+
+    // var a = 99;
+
+    // function fn1() {
+    //   console.log(a); //undefined  :  局部作用域内变量提升了
+    //   var a = 999;
+    // }
+    // fn1();
+
+    // let a = 99;
+
+    // function fn1() {
+    //   console.log(a); //Cannot access 'a' before initialization：暂时性死区
+    //   let a = 999;
+    // }
+    // fn1();
+
+  </script>
+</body>
+
+</html>

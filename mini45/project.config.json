@@ -1,0 +1,101 @@
+{
+  "miniprogramRoot": "miniprogram/",
+  "cloudfunctionRoot": "cloudfunctions/",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "bundle": false,
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
+  },
+  "appid": "wxe684fee35e1795cc",
+  "projectname": "mini45",
+  "libVersion": "2.14.1",
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "db guide",
+          "pathName": "pages/databaseGuide/databaseGuide",
+          "query": ""
+        },
+        {
+          "name": "pageTwo",
+          "pathName": "pages/pageTwo/pageTwo",
+          "query": "name=lisi&sex=男",
+          "scene": null
+        },
+        {
+          "name": "pageThree",
+          "pathName": "pages/pageThree/pageThree",
+          "query": "name=lisi&sex=男",
+          "scene": null
+        },
+        {
+          "name": "pageFour",
+          "pathName": "pages/pageFour/pageFour",
+          "query": "name=lisi&sex=男",
+          "scene": null
+        },
+        {
+          "name": "pageFive",
+          "pathName": "pages/pageFive/pageFive",
+          "query": "name=lisi&sex=男",
+          "scene": null
+        },
+        {
+          "name": "pageSix",
+          "pathName": "pages/pageSix/pageSix",
+          "query": "name=lisi&sex=男",
+          "scene": null
+        },
+        {
+          "name": "todoList",
+          "pathName": "pages/todoList/todoList",
+          "query": "name=lisi&sex=男",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

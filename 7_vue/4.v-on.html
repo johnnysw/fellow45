@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 1、引入 vue -->
+  <div id="app">
+    <!-- <button v-on:click="add('haha',$event)">添加</button> -->
+    <button @click="add('haha',$event)">添加</button>
+    <ul>
+      <li v-for=" (student,index) in students ">
+        <span>序号： {{index + 1}} </span>
+        <span>姓名： {{student.name}} </span>
+        <span>年龄： {{student.age}} </span>
+      </li>
+    </ul>
+  </div>
+  <script src="./vue.js"></script>
+  <script>
+    let vm = new Vue({
+      // 2、确定要挂载的元素
+      el: '#app',
+      // 3、声明要绑定的数据
+      data: {
+        students: [
+          {
+            name: 'lisi',
+            age: 23
+          },
+          {
+            name: 'wangwu',
+            age: 19
+          },
+          {
+            name: 'zhaoliu',
+            age: 24
+          },
+        ]
+      },
+      methods: {
+        add(str, e) {
+          // this => vm(实例化的 vue 对象)
+          this.students.push({
+            name: 'liuzhenhua',
+            age: 20
+          })
+          console.log(str);
+          // console.log(e);
+          console.log(event);
+        }
+      },
+    })
+  </script>
+</body>
+
+</html>

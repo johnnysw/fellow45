@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 1、引入 vue -->
+  <div id="app">
+    <!-- v-model 该属性只对表单元素生效 -->
+    <p>
+      <input v-model="msg" type="text" />
+    </p>
+
+    <p>
+      <input type="checkbox" v-model="fruit" value="apple"  name="" id=""> 苹果
+      <input type="checkbox" v-model="fruit" value="banana"  name="" id="">香蕉
+      <input type="checkbox" v-model="fruit" value="pear"  name="" id="">梨
+    </p>
+
+    <p>
+      <select v-model="city" name="" id="">
+        <option value="哈">哈尔滨</option>
+        <option value="齐">齐齐哈尔</option>
+        <option value="牡">牡丹江</option>
+        <option value="佳">佳木斯</option>
+      </select>
+    </p>
+
+    <p>
+      <input v-model="sex" type="radio" value="0" />男
+      <input v-model="sex" type="radio" value="1" />女
+    </p>
+  </div>
+
+  <script src="./vue.js"></script>
+  <script>
+    let vm = new Vue({
+      // 2、确定要挂载的元素
+      el: '#app',
+      // 3、声明要绑定的数据
+      data: {
+        msg: 'hello word',
+        fruit:[],
+        city:'哈',
+        sex:'0'
+      }
+    })
+  </script>
+</body>
+
+</html>

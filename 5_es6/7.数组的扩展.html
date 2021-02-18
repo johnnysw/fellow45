@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数组的扩展</title>
+</head>
+
+<body>
+  <div id="div1"></div>
+  <ul>
+    <li>111</li>
+    <li>111</li>
+    <li>111</li>
+  </ul>
+
+  <script>
+    console.log(NaN == NaN);//false
+    console.log(Number.isNaN(NaN)); // true
+    let oDiv1 = document.getElementById('div1');
+    let aaa = 'hahahahahaha';
+    // oDiv1.innerHTML = '<ul>' +
+    //   '<li> <a href="">' + aaa + '</a></ >' +
+    //   '<li><a href="">222</a></li>' +
+    //   '</ul > ';
+
+    oDiv1.innerHTML = `<ul>
+    <li><a href="">${aaa}</a></li>
+    <li><a href="">222999</a></li>
+   </ul>`;
+
+    //  创建数组的方式
+    let arr = [1, 2, 3];
+    // let a1 = new Array(5);
+    let a1 = new Array(5, 4, 3, 2, 1);
+    let a2 = Array.of(1, 2, 3, 3, 4);
+    console.log(a2);
+    console.log(a1);//[5]
+
+    //类数组 =》 数组
+    let aLi = document.getElementsByTagName('li');
+    // let ali = [...aLi];
+    let ali = Array.from(aLi);
+    ali.push(666)
+    console.log(ali);
+
+    // 用来找出第一个符合条件的数组成员
+    // let a3 = a1.find(function (val, key, arr) {
+    //   return val < 5;
+    // })
+    // console.log(a3);
+    let a3 = a1.findIndex(function (val, key, arr) {
+      return val < 5;
+    })
+    console.log(a3);
+    // 数组的遍历
+    let arr2 = [{
+      name: 'wangwu',
+      age: 22
+    }, {
+      name: 'shangsan',
+      age: 78
+    }, {
+      name: 'zhaosi',
+      age: 34
+    }, {
+      name: 'liuneng',
+      age: 96
+    }]
+
+    // 1、for
+    // 2、for of
+    // for (let p of arr2) {
+    //   console.log(p);
+    // }
+
+    // values()
+    for (let value of arr2.values()) {
+      console.log(value);
+    }
+    // keys()
+    for (let key of arr2.keys()) {
+      console.log(key);
+    }
+    // entries()
+    for (let [index, value] of arr2.entries()) {
+      console.log(index, value);
+    }
+
+    // 3、forEach 没有返回值
+    arr2.forEach(function (value, index, arr) {
+      value.age += 1;
+    })
+    console.log(arr2);
+
+    // 4、map
+    let arr3 = arr2.map(function (value, index, arr) {
+      if (value.age > 40) {
+        return value.name
+      }
+    })
+    console.log(arr3);
+
+    // 4、filter
+    let arr4 = arr2.filter(function (value, index, arr) {
+      return value.age > 40
+    })
+    console.log(arr4);
+
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>

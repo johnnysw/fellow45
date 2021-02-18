@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>const</title>
+</head>
+
+<body>
+  <!-- 
+    var const 的区别：
+    1、const 也不存在变量提升
+    2、const 也不允许重复声明
+    3、const声明的变量赋值以后，不允许再修改该变量的值（引用数据类型不能改地址）
+   -->
+  <script>
+    // console.log(aa);//10
+    // const aa = 10;
+    // aa = 100;
+    // console.log(aa);//Assignment to constant variable.
+
+
+    // 堆栈
+    const obj = {
+      name:'lisi'
+    }
+    obj.age = 18;
+    obj.name = 'wangwu';
+
+    obj = {
+      school:'清华'
+    }
+
+    console.log(obj);
+  </script>
+</body>
+
+</html>

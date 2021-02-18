@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 1、引入 vue -->
+  <div id="app">
+    {{ msg }}
+  </div>
+
+  <!-- 注意！！ 没有挂载的元素就不会生效  -->
+  <div id="container">
+    {{ msg }}
+  </div>
+  <script src="./vue.js"></script>
+  <script>
+    let vm = new Vue({
+      // 2、确定要挂载的元素
+      el: '#app',
+      // 3、声明要绑定的数据
+      data: {
+        msg: 'hello word'
+      }
+    })
+  </script>
+</body>
+
+</html>

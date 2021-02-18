@@ -1,0 +1,9 @@
+/* miniprogram/pages/todoList/todoList.wxss */
+button{
+  margin:0;
+}
+.wrapper{
+  padding:10px;
+  display: flex;
+  justify-content: space-between;
+}

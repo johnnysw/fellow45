@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/pageOne/pageOne",
+    "pages/pageTwo/pageTwo",
+    "pages/pageThree/pageThree",
+    "pages/pageFour/pageFour",
+    "pages/pageFive/pageFive",
+    "pages/pageSix/pageSix",
+    "pages/todoList/todoList"
+  ],
+  "window": {
+    "backgroundColor": "#ff0000",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "45 班的小程序",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#d4237a",
+    "list": [
+      {
+        "pagePath": "pages/pageOne/pageOne",
+        "text": " 页面一",
+        "iconPath": "./images/one1.png",
+        "selectedIconPath": "./images/one2.png"
+      },
+      {
+        "pagePath": "pages/pageTwo/pageTwo",
+        "text": "页面二",
+        "iconPath": "./images/two1.png",
+        "selectedIconPath": "./images/two2.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}
