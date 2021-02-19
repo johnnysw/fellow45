@@ -1,16 +1,14 @@
 const Koa = require("koa");
 const app = new Koa();
 
-function getData() {
-  return new Promise(function (resolve, reject) {
-    setTimeout(function () {
-      resolve("haha");
-    }, 2000);
-  });
-}
 
-app.use(async (ctx) => {
-  ctx.body = await getData();
+app.use((ctx) => {
+  setTimeout(function(){
+    ctx.body = 'hello';
+
+  }, 2000);
+
+  ctx.body = 'world';
 });
 
 app.listen(3000);
