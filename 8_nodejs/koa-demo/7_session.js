@@ -24,28 +24,31 @@ app.keys = ['123454679@#$%^&'];
 // 加载session中间件
 app.use(session(app));
 
-router.get("/", async (ctx) => {
-  await ctx.render("index", {
-    title: "ejs",
-    message: "hello world",
-    blogs: [
-      {
-        title: "aaaaa",
-        createTime: "2021-02-01",
-      },
-      {
-        title: "bbbb",
-        createTime: "2021-02-02",
-      },
-    ]
-  });
+router.get('/login', async (ctx) => {
+    await ctx.render('login');
 });
 
-router.get('/todo', async (ctx) => {
-    await ctx.render('todo.html', {
-        message: 'todo...'
+router.post('/doLogin', async (ctx) => {
+    let user = ctx.request.body; //{username: xx, password:1234}
+    if(user.username == 'lisi' && user.password == '123456'){
+        // 将用户名信息存入session
+        ctx.session.username = user.username;
+        // ctx.session.xx = yy
+        await ctx.render('welcome', {
+            username: user.username
+        });
+    }else{
+        ctx.body = '用户名或密码不正确!';
+    }
+});
+
+router.get('/userList', async (ctx) => {
+    let uname = ctx.session.username;
+    await ctx.render('user-list', {
+        aa: uname
     });
 });
+
 
 app.use(router.routes()).use(router.allowedMethods());
 
