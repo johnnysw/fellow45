@@ -15,30 +15,41 @@ app.use(
   })
 );
 
-function getData() {
+
+var pool = mysql.createPool({
+  connectionLimit: 10,
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "myblog",
+});
+
+function query(sql, params) {
   return new Promise(function (resolve, reject) {
-    var connection = mysql.createConnection({
-      host: "localhost",
-      user: "root",
-      password: "",
-      database: "myblog",
-    });
-
-    connection.connect();
-
-    connection.query("select * from t_user", async function (error, results) {
-      if (error) reject(error);
-      resolve(results);
-    });
-
-    connection.end();
+    pool.getConnection(function(err, connection) {
+        if (err) reject(err); // not connected!
+        connection.query(sql, params , function (error, results, fields) {
+          connection.release();
+          if (error) reject(error);
+          resolve(results)
+        });
+      });
   });
 }
 
 router.get("/userlist", async (ctx) => {
-  let results = await getData();
+    let username = 'lisi',
+        pass = '123456';
+  let results = await query("select * from t_user where username=? and pass=?", [username, pass]);
   await ctx.render("user-list", {
     users: results,
+  });
+});
+
+router.get("/bloglist", async (ctx) => {
+  let results = await query("select * from t_blog");
+  await ctx.render("blog-list", {
+    blogs: results,
   });
 });
 
