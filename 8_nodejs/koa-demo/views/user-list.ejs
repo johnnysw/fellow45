@@ -7,10 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>
-        <%=aa  %>
-    </h1>
 
-    user list...
+    <ul>
+       <%
+            for(let i=0; i<users.length; i++){
+                let user = users[i];
+        %>
+            <li><%=user.username%></li>
+        <%
+            }
+       %>
+    </ul>
+
 </body>
 </html>
