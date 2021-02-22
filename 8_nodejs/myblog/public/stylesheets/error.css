@@ -1,0 +1,9 @@
+#error{
+    width: 300px;
+    height: 180px;
+    background: #ccc;
+    text-align: center;
+    line-height: 180px;
+    font-size: 18px;
+    margin: 100px auto;
+}

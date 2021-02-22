@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    list-style: none;
+}
+
+nav{
+    width: 1200px;
+    margin: 0 auto;
+    height: 50px;
+    background: #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo{
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+}
+
+nav .logo img{
+    width: 100%;
+    height: 100%;
+}
+
+.menu{
+    display: flex;
+}
+
+.menu li{
+    margin-right: 5px;
+}
+
+.user-info{
+    display: flex;
+    margin-right: 20px;
+}
+
+.user-info li{
+    margin-right: 5px;
+}
+
+.content{
+    width: 1200px;
+    margin: 20px auto;
+}
