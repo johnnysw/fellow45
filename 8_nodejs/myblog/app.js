@@ -1,5 +1,5 @@
 const Koa = require("koa");
-const router = require("./routes");
+const router = require('./routes')
 const views = require("koa-views");
 const serve = require('koa-static');
 const path = require("path");

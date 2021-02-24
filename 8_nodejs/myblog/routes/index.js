@@ -1,6 +1,6 @@
 const Router = require("@koa/router");
-const user = require('../controllers/user');
-const blog = require('../controllers/blog')
+const user = require("./user");
+const blog = require("./blog");
 
 const router = new Router();
 
@@ -8,20 +8,8 @@ router.get("/", async (ctx) => {
   await ctx.render("index");
 });
 
-router.get("/login", async (ctx) => {
-  await ctx.render("login");
-});
 
-router.get("/regist", async (ctx) => {
-  await ctx.render("regist");
-});
-
-router.get("/userlist", user.userList);
-
-router.post("/login", user.login);
-
-router.post("/regist", user.regist);
-
-router.get('/bloglist', blog.blogList);
+router.use('/user', user.routes(), user.allowedMethods())
+router.use('/blog', blog.routes(), blog.allowedMethods())
 
 module.exports = router;
