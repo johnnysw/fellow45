@@ -30,7 +30,7 @@ function query(sql, params) {
         if (err) reject(err); // not connected!
         connection.query(sql, params , function (error, results, fields) {
           connection.release();
-          if (error) reject(error);
+          if (error) reject(emyrror);
           resolve(results)
         });
       });
