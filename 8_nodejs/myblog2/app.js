@@ -5,8 +5,14 @@ const json = require('koa-json')
 const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
+const session = require('koa-session');
 
 const index = require('./routes/index')
+
+// 配置session安全密钥
+app.keys = ['123454679@#$%^&'];
+// 加载session中间件
+app.use(session(app));
 
 // error handler
 onerror(app)

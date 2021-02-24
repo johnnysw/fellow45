@@ -31,3 +31,13 @@ header .user-info li{
   padding: 0 10px;
 }
 /* header end */
+
+/* content start */
+.content{
+  text-align: center;
+}
+.content form{
+  width: 300px;
+  margin: 50px auto;
+}
+/* content end */

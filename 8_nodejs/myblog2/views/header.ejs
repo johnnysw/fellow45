@@ -1,7 +1,17 @@
 <header>
     <div class="logo">LOGO</div>
     <ul class="user-info">
+        <%
+            if(locals.username){
+        %>
+            欢迎：<%=username%>
+        <%
+            }else{
+        %>
         <li><a href="/user/login">登录</a></li> / 
         <li><a href="/user/regist">注册</a></li>
+        <%      
+            }
+        %>
     </ul>
 </header>

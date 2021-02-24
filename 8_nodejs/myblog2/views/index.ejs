@@ -5,8 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的博客</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/index.css">
 </head>
 <body>
-    <h1>hello</h1>
+    <div class="wrap">
+        <%-include('header')%>
+        <div class="content">
+            <%
+                blogs.forEach(function(blog){
+            %>
+            <div class="blog-box">
+                <h2 class="blog-title"><%=blog.title%></h2>
+                <div class="blog-content"><%=blog.content%></div>
+                <div class="other-info">
+                    <span class="post-time"><%=blog.post_time%></span>
+                    <span class="read-count"><%=blog.read_count%></span>
+                </div>
+            </div>
+            <%
+                })
+            %>
+        </div>
+    </div>
 </body>
 </html>

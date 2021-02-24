@@ -11,7 +11,21 @@
     <div class="wrap">
         <%-include('header')%>
         <div class="content">
-            <form action=""></form>
+            <h1>注册</h1>
+            <form action="/user/doRegist" method="post">
+                <p>
+                    用户名：<input type="text" name="username">
+                </p>
+                <p>
+                    密码：<input type="password" name="pass">
+                </p>
+                <p>
+                    电话：<input type="text" name="tel">
+                </p>
+                <p>
+                    <button type="submit">确定</button>
+                </p>
+            </form>
         </div>
     </div>
 </body>
