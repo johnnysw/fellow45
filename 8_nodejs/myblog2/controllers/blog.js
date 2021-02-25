@@ -31,4 +31,40 @@ module.exports = {
       categories,
     });
   },
+  detail: async (ctx) => {
+    // 1. 接数据
+    let blogId = ctx.params.blogId;
+    // 2. 查文章
+    let res = await blogModel.getBlogById(blogId)
+    // 3. 查文章评论
+    let comments = await blogModel.getCommentsByBlogId(blogId)
+
+    let username = ctx.session.username;
+
+    if(res.length > 0){
+      await ctx.render('blog-detail', {
+        blog: res[0],
+        comments,
+        username
+      });
+    }
+  },
+  postComment: async (ctx) => {
+    let comment = ctx.request.body;  //{ content: 'heheeheh99999999', blog_id:9 }
+
+    let userId = ctx.session.userId;
+    if(userId){
+      comment.user_id = userId;
+      let res = await blogModel.saveComment(comment);
+      if(res.affectedRows > 0){
+        ctx.body = 'success';
+      }else{
+        ctx.body = 'fail'
+      }
+    }else{
+      ctx.body = '未登录'
+    }
+
+    
+  }
 };

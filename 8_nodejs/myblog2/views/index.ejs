@@ -18,7 +18,7 @@
                     <% blogs.forEach(function(blog){ %>
                         <div class="blog-box">
                             <h2 class="blog-title">
-                                <%=blog.title%>
+                                <a href="/blog/detail/<%=blog.blog_id%>"><%=blog.title%></a>
                             </h2>
                             <div class="blog-content">
                                 <%=blog.content%>
