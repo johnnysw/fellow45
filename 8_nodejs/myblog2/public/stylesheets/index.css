@@ -5,13 +5,19 @@
 .blog-box{
     margin-top: 20px;
     padding: 20px;
-    width: 800px;
     height: 220px;
     background: #ccc;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.blog-title{
-
+.blog-box:first-child{
+    margin-top: 0;
+}
+.sidebar{
+    width: 220px;
+}
+.blog-list{
+    flex: 1;
+    margin-right: 20px;
 }

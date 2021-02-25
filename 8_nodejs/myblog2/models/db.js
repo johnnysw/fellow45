@@ -16,7 +16,7 @@ module.exports = {
         if (err) reject(err); // not connected!
         connection.query(sql, params, function (error, results, fields) {
           connection.release();
-          if (error) reject(emyrror);
+          if (error) reject(error);
           resolve(results);
         });
       });

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>发表文章</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <style>
+        .content{
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <%-include('header')%>
+        <div class="content">
+            <h1>发表文章</h1>
+            <form action="/blog/doPost" method="post">
+                <p>
+                    分类：
+                    <select name="cate_id">
+                        <%
+                            categories.forEach(function(category){
+                        %>
+                            <option value="<%=category.cate_id%>"><%=category.cate_name%></option>
+                        <%
+                            });
+                        %>
+                    </select>
+                </p>
+                <p>
+                    标题：<input type="text" name="title">
+                </p>
+                <p>
+                    内容：<textarea name="content" cols="30" rows="10"></textarea>
+                </p>
+                <p>
+                    <button type="submit">确定</button>
+                </p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

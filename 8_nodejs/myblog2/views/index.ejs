@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,25 +9,60 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="/stylesheets/index.css">
 </head>
+
 <body>
     <div class="wrap">
         <%-include('header')%>
-        <div class="content">
-            <%
-                blogs.forEach(function(blog){
-            %>
-            <div class="blog-box">
-                <h2 class="blog-title"><%=blog.title%></h2>
-                <div class="blog-content"><%=blog.content%></div>
-                <div class="other-info">
-                    <span class="post-time"><%=blog.post_time%></span>
-                    <span class="read-count"><%=blog.read_count%></span>
+            <div class="content">
+                <div class="blog-list">
+                    <% blogs.forEach(function(blog){ %>
+                        <div class="blog-box">
+                            <h2 class="blog-title">
+                                <%=blog.title%>
+                            </h2>
+                            <div class="blog-content">
+                                <%=blog.content%>
+                            </div>
+                            <div class="other-info">
+                                <span class="post-time">
+                                    <%=blog.post_time%>
+                                </span>
+                                <span class="read-count">
+                                    <%=blog.read_count%> 阅读
+                                </span>
+                                <span class="username">
+                                    <%=blog.username%>
+                                </span>
+                            </div>
+                        </div>
+                        <% }) %>
+                </div>
+                <div class="sidebar">
+                    <div class="btns">
+                        <button id="btn-post">发表文章</button>
+                    </div>
+                    <div class="blog-cates">
+                        <h2>文章分类</h2>
+                        <ul class="category-list">
+                            <%
+                                categories.forEach(function(category){
+                            %>
+                            <li><a href="/?cateId=<%=category.cate_id%>"><%=category.cate_name%></a></li>
+                            <%
+                                });
+                            %>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <%
-                })
-            %>
-        </div>
     </div>
+
+    <script>
+        let btnPost = document.querySelector('#btn-post');
+        btnPost.addEventListener('click', function(){
+            location.href= '/blog/post';
+        }, false);
+    </script>
 </body>
+
 </html>

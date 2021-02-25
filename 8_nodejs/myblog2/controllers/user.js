@@ -42,6 +42,7 @@ module.exports = {
     // 4. 根据查询结果，响应用户页面
     if(res.length > 0){
         ctx.session.username = user.username;
+        ctx.session.userId = res[0].user_id;
         ctx.redirect('/');
     }else{
         await ctx.render('error', {

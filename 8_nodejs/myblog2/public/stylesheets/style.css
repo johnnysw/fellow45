@@ -1,6 +1,6 @@
-body {
+* {
   margin: 0;
-  margin: 0;
+  padding: 0;
 }
 
 ul{
@@ -35,6 +35,7 @@ header .user-info li{
 /* content start */
 .content{
   text-align: center;
+  display: flex;
 }
 .content form{
   width: 300px;
