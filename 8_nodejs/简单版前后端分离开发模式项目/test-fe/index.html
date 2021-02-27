@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul id="ul1">
+    </ul>
+    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        let oUl1 = document.querySelector('#ul1');
+
+        axios.get('http://localhost:3000/list')
+        .then(res => {
+            res.data.forEach(elem => {
+                let oLi = document.createElement('li');
+                oLi.innerHTML = elem;
+                oUl1.appendChild(oLi);
+            });
+        });
+    </script>
+</body>
+</html>
