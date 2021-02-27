@@ -1,18 +1,31 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    Home...
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
+  created(){
+    this.checkLogin();
+  },
+  methods:{
+    checkLogin(){
+      this.axios({
+        method: "post",
+        url: "http://localhost:3000/user/checkLogin",
+        headers: {
+          "Authorization": localStorage.getItem('mytoken')
+        }
+      }).then((res) => {
+        let {state} = res.data;
+        if(state === 'fail'){
+          this.$router.push('/login');
+        }
+      });
+    }
   }
 }
 </script>

@@ -12,9 +12,29 @@
 export default {
   name: "Home",
   created() {
-    this.$http.get("http://localhost:3000/list").then((res) => {
-      console.log(res.data);
-    });
+    // this.axios({
+    //   method: "get",
+    //   url: "http://localhost:3000/list",
+    //   data: {
+    //     name: "lisi",
+    //     age: 23,
+    //   },
+    //   // headers:{
+    //   //   'content-type': 'application/x-www-form-urlencoded'
+    //   // }
+    // }).then((res) => {
+    //   console.log(res.data);
+    // });
+  },
+  methods: {
+    sendRequest() {
+      this.axios({
+        method: "post",
+        url: "http://localhost:3000/postMessage",
+      }).then((res) => {
+        // console.log(res.data);
+      });
+    },
   },
 };
 </script>

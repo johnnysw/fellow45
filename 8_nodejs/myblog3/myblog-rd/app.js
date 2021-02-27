@@ -4,16 +4,23 @@ const json = require('koa-json')
 const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
-
+const cors = require('@koa/cors');
 const index = require('./routes')
+const session = require('koa-session')
 
+
+// 配置session安全密钥
+app.keys = ['123454679@#$%^&'];
+// 加载session中间件
+app.use(session(app));
 
 // 处理跨域
-app.use(async (ctx, next) => {
-  ctx.set("Access-Control-Allow-Origin", "*")
-  // next继续执行下一个中间件
-  await next()
-})
+// app.use(async (ctx, next) => {
+//   ctx.set("Access-Control-Allow-Origin", "*")
+//   // next继续执行下一个中间件
+//   await next()
+// })
+app.use(cors());
 
 // error handler
 onerror(app)
