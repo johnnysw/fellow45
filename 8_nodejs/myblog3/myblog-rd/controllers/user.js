@@ -16,7 +16,7 @@ module.exports = {
                 userId: res[0].user_id,
                 username: res[0].username
             }
-            let token = jwt.sign(payload, mySecretKey, {expiresIn: 120});
+            let token = jwt.sign(payload, mySecretKey, {expiresIn: '2d'});
             ctx.body = {
                 state: 'success',
                 token

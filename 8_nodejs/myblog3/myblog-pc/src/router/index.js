@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import BlogDetail from '../views/BlogDetail.vue'
+import PostBlog from '../views/PostBlog.vue'
 
 Vue.use(VueRouter)
 
@@ -13,7 +14,7 @@ const routes = [
     component: Home
   },
   {
-    path: '/login',
+    path: '/user/login',
     name: 'Login',
     component: Login
   },
@@ -21,6 +22,21 @@ const routes = [
     path: '/blog/detail/:blogId',
     name: 'BlogDetail',
     component: BlogDetail
+  },
+  {
+    path: '/blog/post',
+    name: 'PostBlog',
+    component: PostBlog,
+    beforeEnter: (to, from, next) => {
+      // let myToken = localStorage.getItem("mytoken");
+      // if (myToken){
+      //   next();
+      // }else{
+      //   alert('请先登录');
+      //   next({name: "Login"});
+      // }
+      next();
+    }
   },
   // {
   //   path: '/about',

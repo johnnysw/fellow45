@@ -3,9 +3,13 @@
     <div id="nav">
       <div class="logo">LOGO</div>
       <ul class="user-info">
-        <li><a href="/user/login">登录</a></li>
+        <li>
+          <router-link to="/user/login">登录</router-link>
+        </li>
         /
-        <li><a href="/user/regist">注册</a></li>
+        <li>
+          <router-link to="/user/regist">注册</router-link>
+        </li>
       </ul>
     </div>
     <router-view />
@@ -22,49 +26,49 @@ export default {
 
 <style lang="scss">
 // vue-clic中配置的webpack默认不支持导入.scss文件
-  // @import url('./assets/style.scss')
+// @import url('./assets/style.scss')
 
-  * {
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.wrap {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+#nav {
+  background: #ccc;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    margin-left: 20px;
   }
-  
-  ul {
-    list-style: none;
-  }
-  
-  .wrap {
-    width: 1200px;
-    margin: 0 auto;
-  }
-  
-  #nav {
-    background: #ccc;
-    height: 50px;
+
+  .user-info {
+    margin-right: 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-  
-    .logo {
-      margin-left: 20px;
-    }
-  
-    .user-info {
-      margin-right: 20px;
-      display: flex;
-  
-      li {
-        padding: 0 10px;
-      }
+
+    li {
+      padding: 0 10px;
     }
   }
-  
-  .content {
-    text-align: center;
-    display: flex;
-  }
-  .content form {
-    width: 300px;
-    margin: 50px auto;
-  }
+}
+
+.content {
+  text-align: center;
+  display: flex;
+}
+.content form {
+  width: 300px;
+  margin: 50px auto;
+}
 </style>

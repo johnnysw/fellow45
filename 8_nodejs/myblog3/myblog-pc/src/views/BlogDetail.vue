@@ -46,8 +46,8 @@ export default {
   methods: {
     getBlogDetail() {
       let blogId = this.$route.params.blogId;
-      this.axios({
-        url: "http://localhost:3000/blog/detail",
+      this.$http.request({
+        url: "/blog/detail",
         params: {
           blogId,
         },

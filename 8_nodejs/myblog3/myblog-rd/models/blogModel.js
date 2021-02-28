@@ -17,5 +17,11 @@ module.exports = {
         return db.query(`
             select * from t_blog where blog_id=?
         `, [blogId]);
+    },
+    getCategories(){
+        return db.query('select * from t_category');
+    },
+    saveBlog(blog){
+        return db.query('insert into t_blog set ?', blog);
     }
 }

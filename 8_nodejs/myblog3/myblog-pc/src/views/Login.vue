@@ -26,9 +26,9 @@ export default {
   },
   methods: {
     doLogin() {
-      this.axios({
+      this.$http.request({
         method: "post",
-        url: "http://localhost:3000/user/login",
+        url: "/user/login",
         data: {
           username: this.username,
           pass: this.pass,
