@@ -1,18 +1,9 @@
 {
-    "id": "uni-easyinput",
-    "name": "Easyinput 增强输入框",
-    "version": "0.0.8",
-    "description": "easyinput 组件是对原生input组件的增强 ",
-    "keywords": [
-        "uni-ui",
-        "ui",
-        "input",
-        "uni-easyinput",
-        "输入框"
-    ],
+    "name": "AfriGo",
+    "version": "1.0.0",
+    "description": "",
+    "keywords": [],
     "dependencies": {
-        "axios": "^0.21.1",
-        "vue-axios": "^3.2.4",
         "vue-i18n": "^8.23.0"
     }
 }

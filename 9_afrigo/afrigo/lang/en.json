@@ -1,5 +1,10 @@
 {
 	"index": {
-		"welcome": "Weclome back"
+		"welcome": "Weclome back",
+		"tabbar": {
+			"home": "Home",
+			"cart": "Cart",
+			"account": "Account"
+		}
 	}
 }

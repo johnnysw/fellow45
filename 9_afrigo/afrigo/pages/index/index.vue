@@ -1,13 +1,15 @@
 <template>
-	<view class="content">
+	<view class="app">
 		<mescroll-body ref="mescrollRef" @init="mescrollInit" :top="headerHeight" @down="downCallback" @up="loadProductData"
 		 :up="upOption">
-			<view class="product-box" v-for="item in productList" :key="item.prod_id">
-				<image :src="item.main_pic" mode=""></image>
-				<view class="product-info">
-					<text class="product-title">{{item.title}}</text>
-					<text class="product-price">{{item.group_price}}</text>
-					<text class="prduct-sales">{{item.sales}}</text>
+			<view class="product-list">
+				<view class="product-box" v-for="item in productList" :key="item.prod_id" @click="getProductDetail">
+					<image :src="item.main_pic" mode=""></image>
+					<view class="product-info">
+						<text class="product-title">{{item.title}}</text>
+						<text class="product-price">{{item.group_price}}</text>
+						<text class="prduct-sales">{{item.sales}}</text>
+					</view>
 				</view>
 			</view>
 		</mescroll-body>
@@ -34,6 +36,11 @@
 				this.page = page; //此处必须要这么写
 				this.productList = await this.loadData('http://localhost:3000/product/getProducts');
 				
+			},
+			getProductDetail(){
+				uni.navigateTo({
+					url: '/pages/product/detail/detail'
+				})
 			}
 		}
 	}
@@ -42,12 +49,6 @@
 <style lang="scss">
 	.app{
 		background: #F8F8F8;
-	}
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
 	}
 
 	.logo {
@@ -69,11 +70,16 @@
 		color: #8f8f94;
 	}
 	
-	.product-box{
-		width: 100%;
+	.product-list{
 		padding: 24rpx;
+	}
+	
+	.product-box{
+		background: #fff;
+		width: 100%;
 		display: flex;
 		justify-content: space-between;
+		margin-bottom: 24rpx;
 		
 		image{
 			width: 150px;
@@ -84,6 +90,7 @@
 			flex: 1;
 			display: flex;
 			flex-direction: column;
+			margin-left: 24rpx;
 		}
 		
 		

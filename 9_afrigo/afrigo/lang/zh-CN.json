@@ -1,5 +1,10 @@
 {
 	"index": {
-		"welcome": "欢迎回来"
+		"welcome": "欢迎回来",
+		"tabbar": {
+			"home": "主页",
+			"cart": "购物车",
+			"account": "账号"
+		}
 	}
 }

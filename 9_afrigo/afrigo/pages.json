@@ -7,33 +7,67 @@
 			}
 		},
 		{
+			"path": "pages/account/index",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
 			"path": "pages/account/signin",
 			"style": {
 				"navigationStyle": "custom"
 			}
+		}, {
+			"path": "pages/account/setting",
+			"style": {
+				"navigationBarTitleText": "设置",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/product/detail",
+			"style": {
+				"navigationBarTitleText": "商品详情",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/cart/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
 		}
-	    ,{
-            "path" : "pages/test/test1",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "test1",
-                "enablePullDownRefresh": false
-            }
-            
-        },{
-            "path" : "pages/test/test2",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "test2",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#C0C4CC",
+		"selectedColor": "#D81E06",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/tabbar/tab-home.png",
+				"selectedIconPath": "static/tabbar/tab-home-current.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/cart/index",
+				"iconPath": "static/tabbar/tab-cart.png",
+				"selectedIconPath": "static/tabbar/tab-cart-current.png",
+				"text": "购物车"
+			},
+			{
+				"pagePath": "pages/account/index",
+				"iconPath": "static/tabbar/tab-account.png",
+				"selectedIconPath": "static/tabbar/tab-account-current.png",
+				"text": "账号"
+			}
+		]
 	}
 }
