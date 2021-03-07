@@ -18,7 +18,6 @@ module.exports = {
       jwt.verify(accessToken, mySecretKey);
       await next(); //这块必须加await！！！！！
     } catch (err) {
-      console.log(err);
       ctx.status = 401;
       ctx.body = {
         state: "fail",

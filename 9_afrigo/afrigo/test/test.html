@@ -1,0 +1,24 @@
+<script>
+	
+	let obj1 = {
+		name: 'lisi',
+		brother: 
+	};
+	
+	let obj2 = {
+		name: 'wangwu',
+		brother: {
+			name: 'wangxx'
+		}
+	}
+	
+	Object.assign(obj1, obj2)
+	
+	obj1.brother.name = 'zhaoliu'
+	
+	console.log(obj2.brother.name);
+	
+	console.log(obj1.brother == obj2.brother);
+	
+	
+</script>

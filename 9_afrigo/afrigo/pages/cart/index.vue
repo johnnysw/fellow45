@@ -11,8 +11,16 @@
 				
 			}
 		},
+		onLoad(){
+			this.getCartList()
+		},
 		methods: {
-			
+			getCartList(){
+				this.$get('/user/cart')
+				.then(res => {
+					console.log(res);
+				});
+			}
 		}
 	}
 </script>

@@ -24,6 +24,8 @@
 </template>
 
 <script>
+	// import request from '@/common/utils/request.js'
+	
 	export default {
 		data(){
 			return {
@@ -31,9 +33,33 @@
 				pass: ''
 			}
 		},
+		onLoad(){
+		},
 		methods: {
 			doSignin(){
-				uni.request({
+				/* this.$request({
+					url: '/user/signin',
+					data: {
+						
+					}
+				}); */
+				this.$post('/user/signin', {
+					data: {
+						tel: this.tel,
+						pass: this.pass
+					}
+				}).then(res => {
+					let {state, token} = res;
+					if(state == 'success'){
+						uni.setStorageSync('afrigo-token', token);
+						uni.switchTab({
+							url: '/pages/index/index'
+						})
+					}
+				});
+				
+				
+				/* uni.request({
 					method: 'post',
 					url: 'http://localhost:3000/user/signin',
 					data: {
@@ -49,7 +75,7 @@
 							url: '/pages/index/index'
 						})
 					}
-				});
+				}); */
 			}
 		}
 	}
