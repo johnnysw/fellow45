@@ -12,7 +12,16 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
 	/*每个页面公共css */
 	@import url("./static/style.css");
+	
+	.product-detail {
+		
+		img{
+			width: 100%;
+			vertical-align: bottom;
+			display: block;
+		}
+	}
 </style>

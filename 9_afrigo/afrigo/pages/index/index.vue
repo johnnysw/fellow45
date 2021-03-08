@@ -3,7 +3,7 @@
 		<mescroll-body ref="mescrollRef" @init="mescrollInit" :top="headerHeight" @down="downCallback" @up="loadProductData"
 		 :up="upOption">
 			<view class="product-list">
-				<view class="product-box" v-for="item in productList" :key="item.prod_id" @click="getProductDetail">
+				<view class="product-box" v-for="item in productList" :key="item.prod_id" @click="getProductDetail(item)">
 					<image :src="item.main_pic" mode=""></image>
 					<view class="product-info">
 						<text class="product-title">{{item.title}}</text>
@@ -37,9 +37,9 @@
 				this.productList = await this.loadData('http://localhost:3000/product/getProducts');
 				
 			},
-			getProductDetail(){
+			getProductDetail(product){
 				uni.navigateTo({
-					url: '/pages/product/detail/detail'
+					url: '/pages/product/detail?productId='+product.prod_id
 				})
 			}
 		}
