@@ -18,7 +18,11 @@
 			</view>
 		</view>
 		<view class="product-params"></view>
-		<view class="product-qa"></view>
+		<view class="product-qa" @click="toQuestion">
+			<text class="afrigo-icon icon-question"></text>
+			<text class="title">Q&A</text>
+			<text class="afrigo-icon icon-right-arrow"></text>
+		</view>
 		<view class="product-feedback"></view>
 		<view class="product-detail" v-html="prodInfo.detail">
 			
@@ -58,12 +62,20 @@
 						this.prodInfo = product;
 					}
 				});
+			},
+			toQuestion(){
+				uni.navigateTo({
+					url: '/pages/product/question?productId='+this.productId
+				})
 			}
 		}
 	}
 </script>
 
 <style lang="scss">
+	.app{
+		background-color: #F8F8F8;
+	}
 	.swiper{			
 		height: 750rpx;
 		
@@ -74,6 +86,7 @@
 	}
 	
 	.product-info{
+		background: #fff;
 		padding: 24rpx;
 		display: flex;
 		flex-direction: column;
@@ -82,6 +95,30 @@
 			display: flex;
 			justify-content: space-between;
 		}
+	}
+	
+	.product-qa{
+		margin: 10rpx 0;
+		padding: 24rpx;
+		display: flex;
+		align-items: center;
+		background: #fff;
+		
+		.icon-question, .icon-right-arrow{
+			width: 32rpx;
+			height: 32rpx;
+		}
+		
+		.icon-question:before{
+			font-size: 36rpx;
+		}
+		
+		.title{
+			flex: 1;
+			margin: 0 24rpx;
+		}
+		
+		
 	}
 	
 	

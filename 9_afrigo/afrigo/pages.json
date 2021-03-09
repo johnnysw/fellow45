@@ -38,7 +38,16 @@
 			}
 
 		}
-	],
+	    ,{
+            "path" : "pages/product/question",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "商品答疑",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",

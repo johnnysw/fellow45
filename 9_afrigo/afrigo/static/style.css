@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'afrigo-icon';
   src:
-    url('/static/fonts/afrigo-icon.ttf?d3jaji') format('truetype'),
-    url('/static/fonts/afrigo-icon.woff?d3jaji') format('woff'),
-    url('/static/fonts/afrigo-icon.svg?d3jaji#afrigo-icon') format('svg');
+    url('/static/fonts/afrigo-icon.ttf?l5dcdh') format('truetype'),
+    url('/static/fonts/afrigo-icon.woff?l5dcdh') format('woff'),
+    url('/static/fonts/afrigo-icon.svg?l5dcdh#afrigo-icon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -24,6 +24,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-right-arrow:before {
+  content: "\e901";
+  color: #707070;
+}
+.icon-question:before {
+  content: "\e902";
+  color: #d81e06;
+}
 .icon-close:before {
   content: "\e900";
   color: #515151;

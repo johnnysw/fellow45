@@ -37,4 +37,18 @@ module.exports = {
 
     // 4. 返回结果给前端
   },
+  getQuestions: async (ctx) => {
+    // 1. 接数据
+    let productId = ctx.query.productId;
+    // 2. 验证
+
+    // 3. 连接数据库
+    let res = await produtModel.getQuestions(productId);
+
+    // 4. 返回结果给客户端
+    ctx.body = {
+      state: "success",
+      questions: res
+    }
+  }
 };

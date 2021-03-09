@@ -12,5 +12,8 @@ module.exports = {
     },
     getProduct(productId){
         return db.query('select * from t_product where prod_id=?', [productId])
+    },
+    getQuestions(productId){
+        return db. query('select * from t_product_question where prod_id=? and status=1', [productId]);
     }
 }
