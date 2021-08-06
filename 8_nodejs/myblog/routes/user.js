@@ -5,7 +5,7 @@ const router = new Router();
 
 
 router.get("/login", async (ctx) => {
-  await ctx.render("login");
+  await ctx.render("login.ejs");
 });
 
 router.get("/regist", async (ctx) => {

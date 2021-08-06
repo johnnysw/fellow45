@@ -53,7 +53,10 @@ export default {
         },
       }).then((res) => {
         let { state, blog } = res.data;
-        this.blog = blog;
+        if(state === 'success'){
+          this.blog = blog;
+        }
+       
       });
     },
   },

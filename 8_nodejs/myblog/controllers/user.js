@@ -1,4 +1,4 @@
-const userModel = require('../models/userModel');
+const userModel = require("../models/userModel");
 
 module.exports = {
   login: async (ctx) => {
@@ -9,16 +9,17 @@ module.exports = {
       await ctx.render("error", {
         message: "请输入用户名!",
       });
-    }
-    // 3. 连接数据库
-    let res = await userModel.getByNameAndPass(user.username, user.pass);
-    // 4. 响应给用户不同的结果
-    if (res.length > 0) {
-      await ctx.render("index");
     } else {
-      await ctx.render("error", {
-        message: "用户名或密码不正确!",
-      });
+      // 3. 连接数据库
+      let res = await userModel.getByNameAndPass(user.username, user.pass);
+      // 4. 响应给用户不同的结果
+      if (res.length > 0) {
+        await ctx.render("index");
+      } else {
+        await ctx.render("error", {
+          message: "用户名或密码不正确!",
+        });
+      }
     }
   },
   regist: async (ctx) => {
@@ -27,7 +28,7 @@ module.exports = {
       let user = ctx.request.body; // {username: 'lisi', pass: '1234', tel: '51525252'}
       // 2. 验证
       if (user.username == "") {
-        await ctx.render("error", {
+        await ctx.render("error.ejs", {
           message: "请输入用户名!",
         });
       }
@@ -59,7 +60,7 @@ module.exports = {
     let res = await userModel.getUsers();
     // 2. 响应给用户不同的结果
     await ctx.render("user-list", {
-        users: res
+      users: res,
     });
-  }
+  },
 };

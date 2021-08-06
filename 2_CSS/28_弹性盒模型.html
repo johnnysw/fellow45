@@ -15,7 +15,7 @@
       /* 对于flex容器，我们可以设置6个值 */
       /* flex-direction: 用来设置主轴的方向 */
       /* 1：row，它是默认值，表示主轴在水平方向，起点为左端 */
-      flex-direction: row;
+      /* flex-direction: row; */
       /* 2: row-reverse，表示主轴在水平方向，起点为右端 */
       /* flex-direction: row-reverse; */
       /* 3: column，表示主轴在垂直方向，起点在上沿 */
@@ -27,7 +27,7 @@
       /* 1. nowrap,默认值，不换行 */
       /* flex-wrap: nowrap; */
       /* 2. wrap，换行 */
-      /* flex-wrap: wrap; */
+      flex-wrap: wrap;
       /* 3. wrap-reverse, 反方向换行 */
       /* flex-wrap: wrap-reverse; */
 
@@ -66,12 +66,12 @@
       /* 2. flex-end, 在交叉轴的终点对齐 */
       /* align-content: flex-end; */
       /* 3. center, 在交叉轴的中间对齐 */
-      /* align-content: center; */
+      align-content: space-between;
 
     }
 
     .flex-item {
-      /* width: 100px; */
+      width: 100px;
       height: 100px;
       /* flex-grow: 用来定义flex项目的放大的比例，如果有剩余空间的话 */
       /* flex-grow: 1; */
@@ -83,9 +83,9 @@
     }
 
     .item1 {
-      width: 150px;
+      /* width: 150px; */
       background: rgb(245, 15, 15);
-      flex-shrink: 1;
+      /* flex-shrink: 1; */
       /* 如果同时设置flex-basis和width，flex-basic优先级会比width高 */
       /* flex-basis: 200px;
           width: 300px; 
@@ -107,18 +107,18 @@
     }
 
     .item2 {
-      width: 200px;
+      /* width: 200px; */
       background: rgb(235, 175, 10);
-      flex-shrink: 2;
+      /* flex-shrink: 2; */
       /* height: 200px; */
       /* font-size: 32px; */
       /* flex-grow: 2; */
     }
 
     .item3 {
-      width: 300px;
+      /* width: 300px; */
       background: rgb(140, 230, 37);
-      flex-shrink: 3;
+      /* flex-shrink: 3; */
       /* flex-shrink: 2; */
       /* flex-basis: 80px; */
       /* width: 120px; */

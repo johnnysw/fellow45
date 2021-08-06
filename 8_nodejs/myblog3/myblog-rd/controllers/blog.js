@@ -17,7 +17,7 @@ module.exports = {
     let blogId = ctx.query.blogId;
     // 查数据库
     let res = await blogModel.getBlogById(blogId);
-
+    
     ctx.body = {
       state: "success",
       blog: res[0],

@@ -1,11 +1,19 @@
 const mysql = require("mysql");
 
 // 配置数据库连接池
+// var pool = mysql.createPool({
+//   connectionLimit: 10,
+//   host: "localhost",
+//   user: "root",
+//   password: "MyNewPass2021!",
+//   database: "myblog_test",
+// });
+
 var pool = mysql.createPool({
   connectionLimit: 10,
   host: "localhost",
   user: "root",
-  password: "",
+  password: "!",
   database: "myblog",
 });
 
